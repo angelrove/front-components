@@ -1,0 +1,65 @@
+
+.Galery_slider {
+  /*background: #333;*/
+  /*padding: 4px;*/
+  max-width: 760px;
+  margin: auto;
+}
+.Galery_slider .carousel {
+  margin: 10px 0px;
+}
+
+/*-- carousel-cell --*/
+.Galery_slider .carousel-cell {
+  width: 100%;
+
+  margin-right: 10px;
+  counter-increment: carousel-cell;
+}
+
+.Galery_slider .carousel-main .carousel-cell-image {
+  max-width: 100%;
+
+  display: block;
+  margin: 0 auto;
+
+  border-radius: 5px;
+
+  transition: opacity 0.4s;
+  opacity: 0;
+}
+.carousel-main .carousel-cell-image.flickity-lazyloaded,
+.carousel-main .carousel-cell-image.flickity-lazyerror {
+  opacity: 1;
+}
+
+/*-- carousel-nav --*/
+.Galery_slider .carousel-nav .carousel-cell {
+  margin-right: 2px;
+  width: 120px;
+  height: 80px;
+}
+.Galery_slider .carousel-nav .carousel-cell-image {
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+
+  border:2px solid #fff;
+  border-radius: 0;
+}
+
+.Galery_slider .carousel-nav .is-selected .carousel-cell-image {
+  opacity: 1;
+}
+.Galery_slider .carousel-nav .is-nav-selected .carousel-cell-image {
+  opacity: 1;
+  border:2px solid #40a0d0;
+}
+
+/*-- ------------ --*/
+.Galery_slider button {
+  border: 1px solid #ccc;
+}
+.Galery_slider button:hover {
+  border: 1px solid #40a0d0;
+}

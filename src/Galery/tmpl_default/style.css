@@ -1,0 +1,20 @@
+
+.galeria .galeria-title {
+  text-align: center;
+  margin-top: 6px;
+}
+.galeria .thumbnail {
+  margin-top: 20px;
+  margin-bottom: 2px;
+}
+.galeria .thumbnail:hover img {
+  opacity:initial;
+}
+
+/* borde */
+.galeria .thumbnail {
+  border-width:0;
+  padding: 5%;
+  background-color: #EEEEEE;
+  box-shadow: 2px 6px 10px #999;
+}

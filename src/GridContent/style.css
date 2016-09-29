@@ -1,0 +1,61 @@
+/**
+ * angelrove\frontobjs\GridContent
+ */
+
+.grid_content .panel-heading {
+  text-align: center;
+}
+.grid_content .panel-body .image {
+  max-height: 142px;
+  overflow: hidden;
+}
+.grid_content .panel-body img {
+  width: 100%;
+}
+.grid_content .panel-body a img:hover {
+  opacity: 0.8;
+}
+
+/*-- STYLES -----------------------------*/
+/*-- gim --*/
+.grid_content.gim .panel-default {
+  background: #eaeaea;
+  box-shadow: 4px 4px 10px black;
+  border-radius:0;
+}
+.grid_content.gim .panel-heading {
+  background: #eaeaea;
+  border-width:0;
+}
+.grid_content.gim .panel-heading h3 {
+  font-weight: bold;
+  color: #626262;
+  text-transform: uppercase;
+}
+.grid_content.gim .panel-body {
+  padding: 0;
+}
+
+.grid_content.gim .panel-body .image {
+  max-height: 240px;
+}
+
+.grid_content.gim .panel-body .text {
+  padding: 11px 17px;
+}
+
+/*-- v2 --*/
+.grid_content.v2 .panel-default {
+  border: 6px solid #727272;
+  border-radius: 6px;
+ }
+.grid_content.v2 .panel-heading {
+  background-color: #282828;
+  color: #DDD;
+  border-bottom: 3px solid #ccc;
+  border-radius: 1px;
+}
+.grid_content.v2 .panel-heading h3 {
+  font-family: initial;
+  font-size: 30px;
+}

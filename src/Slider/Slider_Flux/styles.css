@@ -1,0 +1,30 @@
+
+div#main_slider {
+  display: table;
+  margin: auto;
+
+  height: initial;
+  background:rgba(0, 0, 0, 0.8);
+  padding: 10px;
+
+  /*border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; -ms-border-radius: 3px;*/
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 8px rgba(0, 0, 0, 0.9) inset;
+}
+div#main_slider div.fluxslider ul.pagination {
+  -moz-box-sizing:content-box;-webkit-box-sizing:
+  content-box;-ms-box-sizing:
+  content-box;
+  box-sizing:content-box;
+  padding:10px 0 !important;
+  overflow:hidden
+}
+div#main_slider div.fluxslider ul.pagination li {
+  text-indent:10000px;
+  height:8px;width:8px;
+  border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;-ms-border-radius:10px;-khtml-border-radius:10px;
+  background:rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, 0.1)
+}
+div#main_slider div.fluxslider ul.pagination li.current {
+  background:rgba(255, 255, 255, 0.2)
+}

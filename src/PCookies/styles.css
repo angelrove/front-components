@@ -1,0 +1,21 @@
+
+#PCookies_overbox {
+ position: fixed;
+ bottom: 0px;
+ left: 0px;
+
+ z-index: 999999;
+ width: 100%;
+ display: none;
+}
+#PCookies_overbox #infobox {
+ padding: 6px;
+ text-align:center;
+
+ background-color: rgba(83, 83, 83, 0.92);
+ color:#eee;
+}
+#PCookies_overbox #infobox a {
+ margin:0 7px;
+ color:#fff;
+}

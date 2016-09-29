@@ -1,0 +1,41 @@
+
+.camera_fakehover {
+  min-height: 250px;
+}
+
+.camera_thumbs_cont ul li > img {
+  max-width: 173px!important;
+  vertical-align: top;
+}
+
+/* Prev / Next */
+.camera_prev > span,
+.camera_next > span {
+  background: unset;
+}
+
+.camera_prev,
+.camera_next {
+  opacity: 0.6;
+  transition: 0.4s;
+}
+.camera_prev:hover,
+.camera_next:hover {
+  opacity: 1;
+}
+
+.camera_prev > span:after,
+.camera_next > span:after {
+  display: block;
+  padding: 9px 13px;
+  font: normal normal normal 24px/1 FontAwesome;
+  color:#007fff;
+}
+
+/* <, > */
+.camera_prev > span:after {
+  content: "\f053";
+}
+.camera_next > span:after {
+  content: "\f054";
+}
