@@ -3,13 +3,13 @@
  * Galery
  */
 
-namespace angelrove\frontobjs;
+namespace angelrove\front_components;
 
 use angelrove\utils\UtilsBasic;
 use angelrove\utils\Vendor;
 use angelrove\utils\CssJs_load;
 
-use angelrove\frontobjs\CanvasImageCrop;
+use angelrove\front_components\CanvasImageCrop;
 
 
 class Galery

@@ -9,7 +9,7 @@
  *
  */
 
-namespace angelrove\frontobjs;
+namespace angelrove\front_components;
 
 use angelrove\utils\Vendor;
 use angelrove\utils\CssJs_load;

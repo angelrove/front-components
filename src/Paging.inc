@@ -12,7 +12,7 @@
  *
  */
 
-namespace angelrove\frontobjs;
+namespace angelrove\front_components;
 
 
 class Paging {
