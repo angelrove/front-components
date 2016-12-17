@@ -30,7 +30,8 @@ class Slider_Flickity
       Vendor::usef('Flickity');
 
       $path = Vendor::get_path('Slider_Flickity');
-      CssJs_load::set(URL_VENDOR.$path.'styles.css');
+      CssJs_load::set($path.'styles.css');
+      CssJs_load::set($path.'scripts.js');
    }
    //-------------------------------------------------
    public function set_id($id_slider)
@@ -48,18 +49,6 @@ class Slider_Flickity
       if(!$this->images) {
          return false;
       }
-
-      CssJs_load::set_script("
-        $('#main_slider .carousel').flickity({
-          wrapAround: true,
-          lazyLoad: true,
-          bgLazyLoad: true,
-          cellAlign: 'center',
-          autoPlay: true,
-
-          ".$this->options."
-        });
-      ");
 
       // Tmpl -----
       include('tmpl.inc');

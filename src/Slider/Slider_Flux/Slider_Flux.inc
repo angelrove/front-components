@@ -32,7 +32,7 @@ class Slider_Flux
       Vendor::usef('flux-slide');
 
       $path = Vendor::get_path('Slider_Flux');
-      CssJs_load::set(URL_VENDOR.'/'.$path.'styles.css');
+      CssJs_load::set($path.'styles.css');
    }
    //------------------------------------------
    function show()

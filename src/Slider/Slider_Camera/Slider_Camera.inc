@@ -1,7 +1,7 @@
 <?
 /**
  * Utiliza la librería: Camera slideshow
- *   www.pixedelic.com, https://github.com/pixedelic/Camera
+ *  www.pixedelic.com, https://github.com/pixedelic/Camera
  */
 
 namespace angelrove\front_components;
@@ -31,7 +31,7 @@ class Slider_Camera
       Vendor::usef('camera');
 
       $path = Vendor::get_path('Slider_Camera');
-      CssJs_load::set(URL_VENDOR.$path.'styles.css');
+      CssJs_load::set($path.'styles.css');
    }
    //-------------------------------------------------
    public function set_id($id_slider)

@@ -1,5 +1,6 @@
 <?
 use angelrove\utils\UtilsBasic;
+$c=0;
 ?>
 
 <div id="main_slider" class="Slider_Flickity border_shadow">
@@ -8,7 +9,7 @@ use angelrove\utils\UtilsBasic;
       foreach($this->images as $image) {
          $datos_img = UtilsBasic::InputFile_getFile($image->file_foto, $this->images_subdir);
       ?>
-        <div class="carousel-cell">
+        <div class="carousel-cell" id="cell_<?=$image->id?>" title="<?=$image->nombre?>">
            <img class="carousel-cell-image" data-flickity-lazyload="<?=$datos_img['ruta_completa']?>">
 
            <? if($image->nombre) { ?>

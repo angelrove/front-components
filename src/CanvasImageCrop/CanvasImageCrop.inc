@@ -11,7 +11,7 @@ use angelrove\utils\CssJs_load;
 
 // Libs ----
 $path = Vendor::get_path('CanvasImageCrop');
-CssJs_load::set(URL_VENDOR.'/'.$path.'scripts.js');
+CssJs_load::set($path.'scripts.js');
 
 
 class CanvasImageCrop

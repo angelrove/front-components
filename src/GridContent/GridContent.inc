@@ -26,7 +26,7 @@ class GridContent
 
       // Libs ----
       $path = Vendor::get_path('GridContent');
-      CssJs_load::set(URL_VENDOR.'/'.$path.'style.css');
+      CssJs_load::set($path.'style.css');
    }
    //-------------------------------------------------------------
    // $listFotos[]: file_foto, nombre, texto, url
@@ -53,6 +53,7 @@ class GridContent
          // Image ------
          $datos_img = UtilsBasic::InputFile_getFile($foto->file_foto, $subdir_uploads);
          $htm_img   = UtilsBasic::get_htm_img($datos_img, '', $foto->nombre, '', false, $foto->url);
+         $foto->nombre = ($foto->url)? '<a href="'.$foto->url.'">'.$foto->nombre.'</a>' : $foto->nombre;
 
          // tmpl Ficha -----
          ob_start();

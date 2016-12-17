@@ -21,19 +21,24 @@ class WInputCode
     // CodeMirror ------
     CssJs_load::set_css(URL_VENDOR."/codemirror-5.19.0/doc/docs.css");
     CssJs_load::set_css(URL_VENDOR."/codemirror-5.19.0/lib/codemirror.css");
-
     CssJs_load::set_js(URL_VENDOR."/codemirror-5.19.0/lib/codemirror.js");
 
     CssJs_load::set_js(URL_VENDOR."/codemirror-5.19.0/addon/selection/active-line.js");
     CssJs_load::set_js(URL_VENDOR."/codemirror-5.19.0/addon/edit/matchbrackets.js");
+
+    // CssJs_load::set_js(URL_VENDOR."/codemirror-5.19.0/keymap/sublime.js");
+
+    CssJs_load::set_css(URL_VENDOR."/codemirror-5.19.0/addon/hint/show-hint.css");
+    CssJs_load::set_js(URL_VENDOR."/codemirror-5.19.0/addon/hint/show-hint.js");
+    CssJs_load::set_js(URL_VENDOR."/codemirror-5.19.0/addon/hint/css-hint.js");
 
     CssJs_load::set_css(URL_VENDOR."/codemirror-5.19.0/theme/".$theme.".css");
     CssJs_load::set_js(URL_VENDOR."/codemirror-5.19.0/mode/".$tipo.'/'.$tipo.".js");
 
     //------------------
     $path = Vendor::get_path('WInputCode');
-    CssJs_load::set(URL_VENDOR.$path.'styles.css');
-    CssJs_load::set(URL_VENDOR.$path.'libs.js');
+    CssJs_load::set($path.'styles.css');
+    CssJs_load::set($path.'libs.js');
 
     //------------------
     $this->name  = $name;
@@ -83,7 +88,8 @@ $(document).ready(function() {
     lineNumbers: true,
     styleActiveLine: true,
     matchBrackets: true,
-    autorefresh:true
+    autorefresh:true,
+    extraKeys: {"Ctrl-Space": "autocomplete"},
   });
   editores['$this->name'].setOption("theme", theme);
 

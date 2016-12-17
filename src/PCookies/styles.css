@@ -13,7 +13,8 @@
  text-align:center;
 
  background-color: rgba(83, 83, 83, 0.92);
- color:#eee;
+ font-size: 13px;
+ color:#e0dfdf;
 }
 #PCookies_overbox #infobox a {
  margin:0 7px;

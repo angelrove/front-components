@@ -28,6 +28,8 @@ class Galery
 
       // Options ---
       $this->id_galery   = $id_galery;
+      $this->id_obj_galery = 'Galery_'.$id_galery;
+
       $this->conf_tipo   = $conf_tipo;
       $this->conf_canvas = $conf_canvas;
       $this->conf_titulo = $conf_titulo;
@@ -37,8 +39,8 @@ class Galery
       $this->tmpl_dir_tipo = 'tmpl_'.$this->conf_tipo;
 
       // libs ---
-      CssJs_load::set(URL_VENDOR.$path.$this->tmpl_dir_tipo.'/style.css');
-      CssJs_load::set(URL_VENDOR.$path.$this->tmpl_dir_tipo.'/script.js');
+      CssJs_load::set($path.$this->tmpl_dir_tipo.'/style.css');
+      CssJs_load::set($path.$this->tmpl_dir_tipo.'/script.js');
 
       switch ($this->conf_tipo) {
          case 'isotope':
@@ -107,7 +109,7 @@ class Galery
          }
          else {
             $lightbox_link = $img['ruta_completa'];
-            $lightbox_params = 'data-lightbox="foto"';
+            $lightbox_params = 'data-lightbox="'.$this->id_obj_galery.'"';
          }
 
          // tmpl Ficha -----

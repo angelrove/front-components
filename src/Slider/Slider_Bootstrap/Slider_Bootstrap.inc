@@ -25,7 +25,7 @@ class Slider_Bootstrap
 
       //--------
       $path = Vendor::get_path('Slider_Bootstrap');
-      CssJs_load::set(URL_VENDOR.'/'.$path.'styles.css');
+      CssJs_load::set($path.'styles.css');
    }
    //------------------------------------------
    /*

@@ -11,12 +11,19 @@
 }
 .grid_content .panel-body img {
   width: 100%;
+  margin-bottom: 4px;
 }
 .grid_content .panel-body a img:hover {
   opacity: 0.8;
 }
 
 /*-- STYLES -----------------------------*/
+/*-- default --*/
+.grid_content .panel-heading {
+  background: #fff;
+  border-width: 0;
+}
+
 /*-- gim --*/
 .grid_content.gim .panel-default {
   background: #eaeaea;

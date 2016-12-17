@@ -57,10 +57,7 @@ class Captcha {
   //------------------------------------------------------------------
   public function getCaptcha()
   {
-    $path = Vendor::get_path('Captcha');
-
-    // $url_captcha = URL_VENDOR.'/'.$path.'cool-php-captcha-0.3/captcha.php?id='.$this->id;
-    $url_captcha = '/_vendor'.$path.'cool-php-captcha-0.3/captcha.php?id='.$this->id;
+    $url_captcha = Vendor::get_url('Captcha').'cool-php-captcha-0.3/captcha.php?id='.$this->id;
 
     $img_src = $url_captcha.'&amp;t='.$_SERVER['REQUEST_TIME'];
 
