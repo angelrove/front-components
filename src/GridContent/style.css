@@ -23,6 +23,9 @@
   background: #fff;
   border-width: 0;
 }
+.grid_content .panel-body .text {
+  text-align: justify;
+}
 
 /*-- gim --*/
 .grid_content.gim .panel-default {
