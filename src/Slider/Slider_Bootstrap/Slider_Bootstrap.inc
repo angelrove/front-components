@@ -7,7 +7,7 @@
 namespace angelrove\front_components;
 
 use angelrove\utils\Vendor;
-use angelrove\utils\CssJs_load;
+use angelrove\utils\CssJsLoad;
 
 
 class Slider_Bootstrap
@@ -25,7 +25,7 @@ class Slider_Bootstrap
 
       //--------
       $path = Vendor::get_path('Slider_Bootstrap');
-      CssJs_load::set($path.'styles.css');
+      CssJsLoad::set($path.'styles.css');
    }
    //------------------------------------------
    /*
@@ -37,7 +37,7 @@ class Slider_Bootstrap
          return false;
       }
 
-      // CssJs_load::set_script("");
+      // CssJsLoad::set_script("");
 
       include('tmpl.inc');
    }

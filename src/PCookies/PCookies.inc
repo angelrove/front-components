@@ -7,7 +7,7 @@
 
 namespace angelrove\front_components;
 
-use angelrove\utils\CssJs_load;
+use angelrove\utils\CssJsLoad;
 use angelrove\utils\Vendor;
 
 
@@ -20,8 +20,8 @@ class PCookies
 
       // Libs ---
       $path = Vendor::get_path('PCookies');
-      CssJs_load::set($path.'styles.css');
-      CssJs_load::set($path.'scripts.js');
+      CssJsLoad::set($path.'styles.css');
+      CssJsLoad::set($path.'scripts.js');
    }
    //----------------------------------------------------------
    function show($show_flag=true)

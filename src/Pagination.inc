@@ -4,18 +4,20 @@
  * 2006
  *
  *  Ejem...
- *    $htmPaginacion = new Paging($sqlQ, 10);
- *    $htmPaginacion->setUrlFormat('?query='.$_GET['query'].'&id_page=[id_page]');
+ *    $example = new Pagination($sqlQ, 10);
+ *    $example->setUrlFormat('?query='.$_GET['query'].'&id_page=[id_page]');
  *
- *    $listRows = $htmPaginacion->getListRows();
- *    $listPaginas = $htmPaginacion->getHtmPaginas();
+ *    $listRows  = $example->getListRows();
+ *    $listPages = $example->getHtmPaginas();
  *
  */
 
 namespace angelrove\front_components;
 
+use angelrove\utils\Db_mysql;
 
-class Paging {
+
+class Pagination {
   private $labels_es = array(
            'prev'=> 'Anterior',
            'sig' => 'Siguiente');
@@ -42,7 +44,10 @@ class Paging {
   //----------------------------------------------------------------------
   // PUBLIC
   //----------------------------------------------------------------------
-  function __construct($sqlQ, $numRowsPage, $id_page='') {
+  function __construct($sqlQ, $numRowsPage, $id_page='')
+  {
+    global $CONFIG_APP;
+
     if(!$sqlQ) return '';
 
     $this->labels      = $this->labels_es;
@@ -70,9 +75,12 @@ class Paging {
      $sqlQ = preg_replace('/SELECT/', 'SELECT SQL_CALC_FOUND_ROWS ', $sqlQ, 1);
      $sqlQ .= $sqlLimit;
 
-     if(DEBUG_SQL) {
-        print_r2($sqlQ);
+     // DEBUG ----
+     if($CONFIG_APP['debug']['SQL']) {
+        print_r2('DEBUG_SQL: '.$sqlQ);
      }
+     //-----------
+
      $this->listRows = Db_mysql::getListObject($sqlQ);
      $this->numRows  = Db_mysql::getValue("SELECT FOUND_ROWS()");
 
@@ -263,4 +271,3 @@ class Paging {
   }
   //----------------------------------------------------------------------
 }
-?>

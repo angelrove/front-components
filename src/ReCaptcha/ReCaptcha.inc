@@ -7,7 +7,7 @@
 
 namespace angelrove\front_components;
 
-use angelrove\utils\CssJs_load;
+use angelrove\utils\CssJsLoad;
 use angelrove\utils\Vendor;
 
 
@@ -20,7 +20,7 @@ class ReCaptcha {
     $this->site_key   = $site_key;
     $this->secret_key = $secret_key;
 
-    CssJs_load::set('https://www.google.com/recaptcha/api.js');
+    CssJsLoad::set('https://www.google.com/recaptcha/api.js');
   }
   //------------------------------------------------------------------
   public function getCaptcha()

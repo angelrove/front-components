@@ -7,7 +7,7 @@ namespace angelrove\front_components;
 
 use angelrove\utils\UtilsBasic;
 use angelrove\utils\Vendor;
-use angelrove\utils\CssJs_load;
+use angelrove\utils\CssJsLoad;
 
 use angelrove\front_components\CanvasImageCrop;
 
@@ -39,13 +39,13 @@ class Galery
       $this->tmpl_dir_tipo = 'tmpl_'.$this->conf_tipo;
 
       // libs ---
-      CssJs_load::set($path.$this->tmpl_dir_tipo.'/style.css');
-      CssJs_load::set($path.$this->tmpl_dir_tipo.'/script.js');
+      CssJsLoad::set($path.$this->tmpl_dir_tipo.'/style.css');
+      CssJsLoad::set($path.$this->tmpl_dir_tipo.'/script.js');
 
       switch ($this->conf_tipo) {
          case 'isotope':
             Vendor::usef('isotope');
-            // CssJs_load::set_script('');
+            // CssJsLoad::set_script('');
          break;
 
          case 'slider':

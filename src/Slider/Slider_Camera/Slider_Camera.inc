@@ -7,7 +7,7 @@
 namespace angelrove\front_components;
 
 use angelrove\utils\Vendor;
-use angelrove\utils\CssJs_load;
+use angelrove\utils\CssJsLoad;
 
 
 class Slider_Camera
@@ -31,7 +31,7 @@ class Slider_Camera
       Vendor::usef('camera');
 
       $path = Vendor::get_path('Slider_Camera');
-      CssJs_load::set($path.'styles.css');
+      CssJsLoad::set($path.'styles.css');
    }
    //-------------------------------------------------
    public function set_id($id_slider)
@@ -59,7 +59,7 @@ class Slider_Camera
       // can use more than one effect, just separate them with commas: 'simpleFade, scrollRight, scrollBottom'
 
       */
-      CssJs_load::set_script("
+      CssJsLoad::set_script("
         jQuery('#".$this->id_slider."').camera({
            fx: 'random',
 

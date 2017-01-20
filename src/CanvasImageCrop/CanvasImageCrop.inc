@@ -6,12 +6,12 @@
 namespace angelrove\front_components;
 
 use angelrove\utils\Vendor;
-use angelrove\utils\CssJs_load;
+use angelrove\utils\CssJsLoad;
 
 
 // Libs ----
 $path = Vendor::get_path('CanvasImageCrop');
-CssJs_load::set($path.'scripts.js');
+CssJsLoad::set($path.'scripts.js');
 
 
 class CanvasImageCrop
@@ -41,7 +41,7 @@ class CanvasImageCrop
     }
 
     //----
-    CssJs_load::set_script(
+    CssJsLoad::set_script(
       'CanvasImageCrop_draw("canvas_'.$id.'", "'.$img.'", '.$srcX.', '.$srcY.', '.$width.', '.$height.');'
     );
 

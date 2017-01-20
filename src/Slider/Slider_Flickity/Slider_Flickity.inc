@@ -7,7 +7,7 @@
 namespace angelrove\front_components;
 
 use angelrove\utils\Vendor;
-use angelrove\utils\CssJs_load;
+use angelrove\utils\CssJsLoad;
 
 class Slider_Flickity
 {
@@ -30,8 +30,8 @@ class Slider_Flickity
       Vendor::usef('Flickity');
 
       $path = Vendor::get_path('Slider_Flickity');
-      CssJs_load::set($path.'styles.css');
-      CssJs_load::set($path.'scripts.js');
+      CssJsLoad::set($path.'styles.css');
+      CssJsLoad::set($path.'scripts.js');
    }
    //-------------------------------------------------
    public function set_id($id_slider)

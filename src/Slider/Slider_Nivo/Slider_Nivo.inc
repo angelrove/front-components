@@ -12,7 +12,7 @@
  */
 
 use angelrove\utils\Vendor;
-use angelrove\utils\CssJs_load;
+use angelrove\utils\CssJsLoad;
 
 class Slider_Nivo
 {
@@ -42,7 +42,7 @@ class Slider_Nivo
                 boxRandom, boxRain, boxRainReverse, boxRainGrow, boxRainGrowReverse
       */
 
-      CssJs_load::set_script("
+      CssJsLoad::set_script("
         $(window).load(function() {
            $('#".self::$id_slider."').nivoSlider();
         });

@@ -12,7 +12,7 @@
 namespace angelrove\front_components;
 
 use angelrove\utils\Vendor;
-use angelrove\utils\CssJs_load;
+use angelrove\utils\CssJsLoad;
 
 
 class Slider_Flux
@@ -32,12 +32,12 @@ class Slider_Flux
       Vendor::usef('flux-slide');
 
       $path = Vendor::get_path('Slider_Flux');
-      CssJs_load::set($path.'styles.css');
+      CssJsLoad::set($path.'styles.css');
    }
    //------------------------------------------
    function show()
    {
-      CssJs_load::set_script("
+      CssJsLoad::set_script("
         $(function(){
           window.f = new flux.slider('#".$this->id_slider."', {
             pagination: true,
