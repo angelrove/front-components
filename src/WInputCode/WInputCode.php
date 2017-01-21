@@ -5,6 +5,8 @@
  * @author José A. Romero Vegas <jangel.romero@gmail.com>
  */
 
+namespace angelrove\front_components\WInputCode;
+
 use angelrove\utils\Vendor;
 use angelrove\utils\CssJsLoad;
 

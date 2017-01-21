@@ -4,13 +4,13 @@
  *  www.pixedelic.com, https://github.com/pixedelic/Camera
  */
 
-namespace angelrove\front_components;
+namespace angelrove\front_components\Slider\Camera;
 
 use angelrove\utils\Vendor;
 use angelrove\utils\CssJsLoad;
 
 
-class Slider_Camera
+class Camera
 {
    private $id_slider = 'Slider_Camera';
    private $images = false;
@@ -30,8 +30,9 @@ class Slider_Camera
       //--------
       Vendor::usef('camera');
 
-      $path = Vendor::get_path('Slider_Camera');
+      $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
       CssJsLoad::set($path.'styles.css');
+      // CssJsLoad::set($path.'/scripts.js');
    }
    //-------------------------------------------------
    public function set_id($id_slider)

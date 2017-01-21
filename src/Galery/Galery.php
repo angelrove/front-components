@@ -3,13 +3,13 @@
  * Galery
  */
 
-namespace angelrove\front_components;
+namespace angelrove\front_components\galery;
 
 use angelrove\utils\UtilsBasic;
 use angelrove\utils\Vendor;
 use angelrove\utils\CssJsLoad;
 
-use angelrove\front_components\CanvasImageCrop;
+use angelrove\front_components\canvasimagecrop\CanvasImageCrop;
 
 
 class Galery
@@ -24,7 +24,6 @@ class Galery
    {
       // Libs -------
       Vendor::usef('lightbox');
-      Vendor::usef('CanvasImageCrop');
 
       // Options ---
       $this->id_galery   = $id_galery;
@@ -35,17 +34,18 @@ class Galery
       $this->conf_titulo = $conf_titulo;
 
       // Tipo de galería ---
-      $path = Vendor::get_path('Galery');
       $this->tmpl_dir_tipo = 'tmpl_'.$this->conf_tipo;
 
       // libs ---
-      CssJsLoad::set($path.$this->tmpl_dir_tipo.'/style.css');
-      CssJsLoad::set($path.$this->tmpl_dir_tipo.'/script.js');
+      $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
+
+      CssJsLoad::set($path.'/'.$this->tmpl_dir_tipo.'/style.css');
+      CssJsLoad::set($path.'/'.$this->tmpl_dir_tipo.'/script.js');
 
       switch ($this->conf_tipo) {
          case 'isotope':
             Vendor::usef('isotope');
-            // CssJsLoad::set_script('');
+            // CssJs_load::set_script('');
          break;
 
          case 'slider':

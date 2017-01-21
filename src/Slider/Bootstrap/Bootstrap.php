@@ -4,13 +4,13 @@
  *
  */
 
-namespace angelrove\front_components;
+namespace angelrove\front_components\Slider\Bootstrap;
 
 use angelrove\utils\Vendor;
 use angelrove\utils\CssJsLoad;
 
 
-class Slider_Bootstrap
+class Bootstrap
 {
    private $id_slider = 'main_slider';
    private $images = false;
@@ -24,7 +24,7 @@ class Slider_Bootstrap
       $this->images_subdir = $images_subdir;
 
       //--------
-      $path = Vendor::get_path('Slider_Bootstrap');
+      $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
       CssJsLoad::set($path.'styles.css');
    }
    //------------------------------------------

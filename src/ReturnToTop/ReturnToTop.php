@@ -5,7 +5,7 @@
  * 2016
  */
 
-namespace angelrove\front_components;
+namespace angelrove\front_components\ReturnToTop;
 
 use angelrove\utils\CssJsLoad;
 use angelrove\utils\Vendor;
@@ -17,9 +17,9 @@ class ReturnToTop
    function __construct()
    {
       // Libs ---
-      $path = Vendor::get_path('ReturnToTop');
-      CssJsLoad::set($path.'scripts.js');
-      CssJsLoad::set($path.'styles.css');
+      $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
+      CssJsLoad::set($path.'/scripts.js');
+      CssJsLoad::set($path.'/styles.css');
    }
    //----------------------------------------------------
    function show()

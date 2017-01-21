@@ -11,10 +11,14 @@
     $vendor_css['nivo-slider-theme4'] = '/vendor/Nivo-Slider/themes/bar/bar.css';
  */
 
+namespace angelrove\front_components\Slider\Nivo;
+
+
 use angelrove\utils\Vendor;
 use angelrove\utils\CssJsLoad;
 
-class Slider_Nivo
+
+class Nivo
 {
    static $id_slider = 'main_slider_';
    private static $id_counter = 0;

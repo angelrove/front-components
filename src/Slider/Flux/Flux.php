@@ -9,13 +9,13 @@
  *
  */
 
-namespace angelrove\front_components;
+namespace angelrove\front_components\Slider\Flux;
 
 use angelrove\utils\Vendor;
 use angelrove\utils\CssJsLoad;
 
 
-class Slider_Flux
+class Flux
 {
    private $id_slider = 'main_slider';
    private $images = false;

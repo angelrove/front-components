@@ -4,12 +4,13 @@
  *   http://flickity.metafizzy.co/
  */
 
-namespace angelrove\front_components;
+namespace angelrove\front_components\Slider\Flickity;
 
 use angelrove\utils\Vendor;
 use angelrove\utils\CssJsLoad;
 
-class Slider_Flickity
+
+class Flickity
 {
    private $id_slider = 'Slider_Flickity';
    private $images = false;
@@ -29,9 +30,9 @@ class Slider_Flickity
       //--------
       Vendor::usef('Flickity');
 
-      $path = Vendor::get_path('Slider_Flickity');
-      CssJsLoad::set($path.'styles.css');
-      CssJsLoad::set($path.'scripts.js');
+      $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
+      CssJsLoad::set($path.'/styles.css');
+      CssJsLoad::set($path.'/scripts.js');
    }
    //-------------------------------------------------
    public function set_id($id_slider)

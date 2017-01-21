@@ -5,7 +5,7 @@
  * 2016
  */
 
-namespace angelrove\front_components;
+namespace angelrove\front_components\PCookies;
 
 use angelrove\utils\CssJsLoad;
 use angelrove\utils\Vendor;
@@ -19,9 +19,9 @@ class PCookies
       global $CONFIG_APP;
 
       // Libs ---
-      $path = Vendor::get_path('PCookies');
-      CssJsLoad::set($path.'styles.css');
-      CssJsLoad::set($path.'scripts.js');
+      $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
+      CssJsLoad::set($path.'/styles.css');
+      CssJsLoad::set($path.'/scripts.js');
    }
    //----------------------------------------------------------
    function show($show_flag=true)
