@@ -31,7 +31,7 @@ class Flux
       //--------
       Vendor::usef('flux-slide');
 
-      $path = Vendor::get_path('Slider_Flux');
+      $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
       CssJsLoad::set($path.'styles.css');
    }
    //------------------------------------------

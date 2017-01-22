@@ -13,12 +13,13 @@ use angelrove\utils\Vendor;
 
 class PCookies
 {
-   //----------------------------------------------------------
-   function __construct()
-   {
-      global $CONFIG_APP;
+   private $link_legaldoc;
 
-      // Libs ---
+   //----------------------------------------------------------
+   function __construct($link_legaldoc)
+   {
+      $this->link_legaldoc = $link_legaldoc;
+
       $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
       CssJsLoad::set($path.'/styles.css');
       CssJsLoad::set($path.'/scripts.js');
@@ -27,8 +28,6 @@ class PCookies
    function show($show_flag=true)
    {
       if($show_flag) {
-         $url_doc = Vendor::get_url('PCookies').'doc.pdf';
-
          include_once('tmpl.inc');
       }
    }

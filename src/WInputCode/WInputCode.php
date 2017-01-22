@@ -38,7 +38,7 @@ class WInputCode
     CssJsLoad::set_js(URL_VENDOR."/codemirror-5.19.0/mode/".$tipo.'/'.$tipo.".js");
 
     //------------------
-    $path = Vendor::get_path('WInputCode');
+    $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
     CssJsLoad::set($path.'styles.css');
     CssJsLoad::set($path.'libs.js');
 
