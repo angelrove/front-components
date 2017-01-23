@@ -6,9 +6,8 @@
 namespace angelrove\front_components\GridContent;
 
 use angelrove\utils\UtilsBasic;
-use angelrove\utils\Vendor;
 use angelrove\utils\CssJsLoad;
-// use angelrove\front_components\CanvasImageCrop;
+// use angelrove\front_components\CanvasImageCrop\CanvasImageCrop;
 
 
 class GridContent
@@ -25,8 +24,7 @@ class GridContent
       $this->conf_style    = $conf_style;
 
       // Libs ----
-      $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
-      CssJsLoad::set($path.'/style.css');
+      CssJsLoad::set(__DIR__.'/style.css');
    }
    //-------------------------------------------------------------
    // $listFotos[]: file_foto, nombre, texto, url

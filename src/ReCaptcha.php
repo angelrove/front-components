@@ -8,7 +8,6 @@
 namespace angelrove\front_components;
 
 use angelrove\utils\CssJsLoad;
-use angelrove\utils\Vendor;
 
 
 class ReCaptcha {

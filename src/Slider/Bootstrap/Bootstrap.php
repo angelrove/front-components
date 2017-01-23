@@ -6,7 +6,6 @@
 
 namespace angelrove\front_components\Slider\Bootstrap;
 
-use angelrove\utils\Vendor;
 use angelrove\utils\CssJsLoad;
 
 
@@ -24,8 +23,7 @@ class Bootstrap
       $this->images_subdir = $images_subdir;
 
       //--------
-      $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
-      CssJsLoad::set($path.'styles.css');
+      CssJsLoad::set(__DIR__.'/styles.css');
    }
    //------------------------------------------
    /*

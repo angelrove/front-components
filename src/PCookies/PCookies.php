@@ -8,7 +8,6 @@
 namespace angelrove\front_components\PCookies;
 
 use angelrove\utils\CssJsLoad;
-use angelrove\utils\Vendor;
 
 
 class PCookies
@@ -20,9 +19,8 @@ class PCookies
    {
       $this->link_legaldoc = $link_legaldoc;
 
-      $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
-      CssJsLoad::set($path.'/styles.css');
-      CssJsLoad::set($path.'/scripts.js');
+      CssJsLoad::set(__DIR__.'/styles.css');
+      CssJsLoad::set(__DIR__.'/scripts.js');
    }
    //----------------------------------------------------------
    function show($show_flag=true)

@@ -3,13 +3,13 @@
  * Galery
  */
 
-namespace angelrove\front_components\galery;
+namespace angelrove\front_components\Galery;
 
 use angelrove\utils\UtilsBasic;
 use angelrove\utils\Vendor;
 use angelrove\utils\CssJsLoad;
 
-use angelrove\front_components\canvasimagecrop\CanvasImageCrop;
+use angelrove\front_components\CanvasImageCrop\CanvasImageCrop;
 
 
 class Galery
@@ -37,10 +37,8 @@ class Galery
       $this->tmpl_dir_tipo = 'tmpl_'.$this->conf_tipo;
 
       // libs ---
-      $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
-
-      CssJsLoad::set($path.'/'.$this->tmpl_dir_tipo.'/style.css');
-      CssJsLoad::set($path.'/'.$this->tmpl_dir_tipo.'/script.js');
+      CssJsLoad::set(__DIR__.'/'.$this->tmpl_dir_tipo.'/style.css');
+      CssJsLoad::set(__DIR__.'/'.$this->tmpl_dir_tipo.'/script.js');
 
       switch ($this->conf_tipo) {
          case 'isotope':

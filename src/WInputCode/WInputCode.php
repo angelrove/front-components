@@ -22,7 +22,7 @@ class WInputCode
   function __construct($name, $type='', $theme='ambiance')
   {
     // Codemirror lib ---
-    include_once('_vendor.inc');
+    include_once('_vendor.php');
     Vendor::usef('codemirror');
 
     //------------------
@@ -30,9 +30,8 @@ class WInputCode
     $this->theme = $theme;
 
     //------------------
-    $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
-    CssJsLoad::set($path.'styles.css');
-    CssJsLoad::set($path.'libs.js');
+    CssJsLoad::set(__DIR__.'/styles.css');
+    CssJsLoad::set(__DIR__.'/libs.js');
   }
   //---------------------------------------------------------------------
   function set_function_on_change() {

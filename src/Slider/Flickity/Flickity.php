@@ -30,9 +30,8 @@ class Flickity
       //--------
       Vendor::usef('Flickity');
 
-      $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
-      CssJsLoad::set($path.'/styles.css');
-      CssJsLoad::set($path.'/scripts.js');
+      CssJsLoad::set(__DIR__.'/styles.css');
+      CssJsLoad::set(__DIR__.'/scripts.js');
    }
    //-------------------------------------------------
    public function set_id($id_slider)

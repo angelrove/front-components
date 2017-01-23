@@ -3,15 +3,13 @@
  *
  */
 
-namespace angelrove\front_components\canvasimagecrop;
+namespace angelrove\front_components\CanvasImageCrop;
 
-use angelrove\utils\Vendor;
 use angelrove\utils\CssJsLoad;
 
 
 // Libs ----
-$path = Vendor::get_path_vendor(__NAMESPACE__, 'CanvasImageCrop');
-CssJsLoad::set($path.'scripts.js');
+CssJsLoad::set(__DIR__.'/scripts.js');
 
 
 class CanvasImageCrop

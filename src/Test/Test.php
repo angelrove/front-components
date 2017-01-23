@@ -1,5 +1,5 @@
 <?
-namespace angelrove\front_components;
+namespace angelrove\front_components\Test;
 
 class Test
 {

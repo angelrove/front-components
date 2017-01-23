@@ -1,8 +1,10 @@
 <?
-Vendor::conf('codemirror', '//cdnjs.cloudflare.com/ajax/libs/codemirror/codemirror-5.23.0/', array(
-   'doc/docs.css',
-   'lib/codemirror.css',
-   'lib/codemirror.js',
+use angelrove\utils\Vendor;
+
+Vendor::conf('codemirror', 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.23.0/', array(
+   'codemirror.css',
+   'codemirror.js',
+   // 'doc/docs.css',
 
    'addon/selection/active-line.js',
    'addon/edit/matchbrackets.js',
