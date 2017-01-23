@@ -1,7 +1,7 @@
 <?
 namespace angelrove\front_components;
 
-class ClassTest
+class Test
 {
 
    function __construct()
