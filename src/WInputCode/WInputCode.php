@@ -3,6 +3,7 @@
  * WInputColor
  *
  * @author José A. Romero Vegas <jangel.romero@gmail.com>
+ *
  */
 
 namespace angelrove\front_components\WInputCode;
@@ -18,33 +19,20 @@ class WInputCode
   private $func_on_change = false;
 
   //---------------------------------------------------------------------
-  function __construct($name, $tipo='', $theme='ambiance')
+  function __construct($name, $type='', $theme='ambiance')
   {
-    // CodeMirror ------
-    CssJsLoad::set_css(URL_VENDOR."/codemirror-5.19.0/doc/docs.css");
-    CssJsLoad::set_css(URL_VENDOR."/codemirror-5.19.0/lib/codemirror.css");
-    CssJsLoad::set_js(URL_VENDOR."/codemirror-5.19.0/lib/codemirror.js");
+    // Codemirror lib ---
+    include_once('_vendor.inc');
+    Vendor::usef('codemirror');
 
-    CssJsLoad::set_js(URL_VENDOR."/codemirror-5.19.0/addon/selection/active-line.js");
-    CssJsLoad::set_js(URL_VENDOR."/codemirror-5.19.0/addon/edit/matchbrackets.js");
-
-    // CssJsLoad::set_js(URL_VENDOR."/codemirror-5.19.0/keymap/sublime.js");
-
-    CssJsLoad::set_css(URL_VENDOR."/codemirror-5.19.0/addon/hint/show-hint.css");
-    CssJsLoad::set_js(URL_VENDOR."/codemirror-5.19.0/addon/hint/show-hint.js");
-    CssJsLoad::set_js(URL_VENDOR."/codemirror-5.19.0/addon/hint/css-hint.js");
-
-    CssJsLoad::set_css(URL_VENDOR."/codemirror-5.19.0/theme/".$theme.".css");
-    CssJsLoad::set_js(URL_VENDOR."/codemirror-5.19.0/mode/".$tipo.'/'.$tipo.".js");
+    //------------------
+    $this->name  = $name;
+    $this->theme = $theme;
 
     //------------------
     $path = Vendor::get_path_vendor(__NAMESPACE__, __CLASS__);
     CssJsLoad::set($path.'styles.css');
     CssJsLoad::set($path.'libs.js');
-
-    //------------------
-    $this->name  = $name;
-    $this->theme = $theme;
   }
   //---------------------------------------------------------------------
   function set_function_on_change() {
