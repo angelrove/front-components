@@ -1,5 +1,5 @@
 <?
-use angelrove\utils\UtilsBasic;
+use angelrove\utils\FileUploaded;
 ?>
 
 <div id="<?=$this->id_slider?>" class="Slider_Bootstrap border_shadow">
@@ -24,7 +24,7 @@ use angelrove\utils\UtilsBasic;
       $active = 'active';
       foreach($this->images as $image)
       {
-         $datos_img = UtilsBasic::InputFile_getFile($image->file_img, $this->images_subdir);
+         $datos_img = FileUploaded::getInfo($image->file_img, $this->images_subdir);
          ?>
 
          <div class="item <?=$active?>">

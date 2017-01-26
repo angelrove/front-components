@@ -1,12 +1,12 @@
 <?
-use angelrove\utils\UtilsBasic;
+use angelrove\utils\FileUploaded;
 ?>
 
 <div id="main_slider" class="border_shadow Slider_Camera">
 <div id="<?=$this->id_slider?>" class="myCarousel camera_wrap camera_azure_skin">
    <?
    foreach($this->images as $image) {
-      $datos_img = UtilsBasic::InputFile_getFile($image->file_foto, $this->images_subdir);
+      $datos_img = FileUploaded::getInfo($image->file_foto, $this->images_subdir);
    ?>
 
       <div data-thumb="<?=$datos_img['ruta_completa_th']?>" data-src="<?=$datos_img['ruta_completa']?>">

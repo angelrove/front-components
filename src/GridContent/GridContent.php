@@ -5,7 +5,7 @@
 
 namespace angelrove\front_components\GridContent;
 
-use angelrove\utils\UtilsBasic;
+use angelrove\utils\FileUploaded;
 use angelrove\utils\CssJsLoad;
 // use angelrove\front_components\CanvasImageCrop\CanvasImageCrop;
 
@@ -49,8 +49,8 @@ class GridContent
       foreach($listFotos as $foto)
       {
          // Image ------
-         $datos_img = UtilsBasic::InputFile_getFile($foto->file_foto, $subdir_uploads);
-         $htm_img   = UtilsBasic::get_htm_img($datos_img, '', $foto->nombre, '', false, $foto->url);
+         $datos_img = FileUploaded::getInfo($foto->file_foto, $subdir_uploads);
+         $htm_img   = FileUploaded::getHtmlImg($datos_img, '', $foto->nombre, '', false, $foto->url);
          $foto->nombre = ($foto->url)? '<a href="'.$foto->url.'">'.$foto->nombre.'</a>' : $foto->nombre;
 
          // tmpl Ficha -----

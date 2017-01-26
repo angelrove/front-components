@@ -1,5 +1,5 @@
 <?
-use angelrove\utils\UtilsBasic;
+use angelrove\utils\FileUploaded;
 $c=0;
 ?>
 
@@ -7,7 +7,7 @@ $c=0;
    <div class="carousel">
       <?
       foreach($this->images as $image) {
-         $datos_img = UtilsBasic::InputFile_getFile($image->file_foto, $this->images_subdir);
+         $datos_img = FileUploaded::getInfo($image->file_foto, $this->images_subdir);
       ?>
         <div class="carousel-cell" id="cell_<?=$image->id?>" title="<?=$image->nombre?>">
            <img class="carousel-cell-image" data-flickity-lazyload="<?=$datos_img['ruta_completa']?>">

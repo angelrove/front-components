@@ -5,7 +5,7 @@
 
 namespace angelrove\front_components\Galery;
 
-use angelrove\utils\UtilsBasic;
+use angelrove\utils\FileUploaded;
 use angelrove\utils\Vendor;
 use angelrove\utils\CssJsLoad;
 
@@ -87,7 +87,7 @@ class Galery
       $c = 0;
       foreach($listFotos as $foto)
       {
-         $img     = UtilsBasic::InputFile_getFile($foto->file_foto, $subdir_uploads);
+         $img     = FileUploaded::getInfo($foto->file_foto, $subdir_uploads);
          $img_alt = htmlentities($foto->nombre);
          $title   = ($this->conf_titulo == 'hidden')? '' : $foto->nombre;
 
