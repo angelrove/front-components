@@ -1,5 +1,6 @@
 {
     "name": "angelrove/front-components",
+    "type": "library",
     "description": "Front components",
     "authors": [
         {
