@@ -17,7 +17,8 @@ namespace angelrove\front_components;
 use angelrove\utils\Db_mysql;
 
 
-class Pagination {
+class Pagination
+{
   private $labels_es = array(
            'prev'=> 'Anterior',
            'sig' => 'Siguiente');
@@ -94,7 +95,8 @@ class Pagination {
   //----------------------------------------------------------------------
   // SET
   //----------------------------------------------------------------------
-  public function setLocal($local) {
+  public function setLocal($local)
+  {
     if(!$local) return;
     $this->labels = $this->{'labels_'.strtolower($local)};
   }
@@ -103,23 +105,27 @@ class Pagination {
    * $urlFormat = 'index[id_page].html'
    * $urlFormat = 'FRIENDLY';
    */
-  public function setUrlFormat($urlFormat) {
+  public function setUrlFormat($urlFormat)
+  {
     $this->hrefSecc = stripslashes($urlFormat);
     //$this->urlFormat = stripslashes($urlFormat);
   }
   //----------------------------------------------------------------------
-  public function setShowAlways($flag) {
+  public function setShowAlways($flag)
+  {
     $this->showAlways = $flag;
   }
   //----------------------------------------------------------------------
-  public function setNumPages($numPagesRango) {
+  public function setNumPages($numPagesRango)
+  {
     $this->numPagesRango = $numPagesRango;
 
     /** Rango: actualizar **/
      $this->rango = $this->getRango($this->id_page, $this->numPagesRango, $this->numTotalPages);
   }
   //----------------------------------------------------------------------
-  public function setMaxPages($maxPages) {
+  public function setMaxPages($maxPages)
+  {
     if($this->maxPages > $maxPages) {
        $this->maxPages = $maxPages;
     }
@@ -132,27 +138,32 @@ class Pagination {
   //----------------------------------------------------------------------
   // GET
   //----------------------------------------------------------------------
-  public function getItemDesde() {
+  public function getItemDesde()
+  {
     $itemDesde = ($this->numRowsPage * $this->id_page) - $this->numRowsPage + 1;
     return $itemDesde;
   }
   //----------------------------------------------------------------------
-  public function getItemHasta() {
+  public function getItemHasta()
+  {
     $itemHasta = $this->numRowsPage * $this->id_page;
     if($itemHasta > $this->numRows) $itemHasta = $this->numRows;
 
     return $itemHasta;
   }
   //----------------------------------------------------------------------
-  public function getNumRows() {
+  public function getNumRows()
+  {
     return $this->numRows;
   }
   //----------------------------------------------------------------------
-  public function &getListRows() {
+  public function &getListRows()
+  {
     return $this->listRows;
   }
   //----------------------------------------------------------------------
-  public function getLinkNext() {
+  public function getLinkNext()
+  {
     $urlNext = '';
 
     if($this->rango[1] > 1) {
@@ -166,7 +177,8 @@ class Pagination {
   //----------------------------------------------------------------------
   // HTM
   //----------------------------------------------------------------------
-  public function getHtmStatus() {
+  public function getHtmStatus()
+  {
     $total = $this->getNumRows();
     $desde = $this->getItemDesde();
     $hasta = $this->getItemHasta();
@@ -228,7 +240,8 @@ class Pagination {
   //----------------------------------------------------------------------
   // PRIVATE
   //----------------------------------------------------------------------
-  private function getUrlParams($id_page) {
+  private function getUrlParams($id_page)
+  {
     $ret = '';
 
     if($this->hrefSecc == 'FRIENDLY') {
@@ -242,7 +255,8 @@ class Pagination {
     return $ret;
   }
   //----------------------------------------------------------------------
-  private function getRango($id_page, $numPagesRango, $numTotalPages) {
+  private function getRango($id_page, $numPagesRango, $numTotalPages)
+  {
     $margenIzq = floor($numPagesRango / 2) - 1;
 
     // $pagInicio

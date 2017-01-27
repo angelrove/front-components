@@ -10,7 +10,8 @@ namespace angelrove\front_components;
 use angelrove\utils\CssJsLoad;
 
 
-class ReCaptcha {
+class ReCaptcha
+{
   private $secret_key;
 
   //------------------------------------------------------------------
