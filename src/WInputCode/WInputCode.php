@@ -44,6 +44,29 @@ class WInputCode
        $str_on_change = "WInputCode_change('$this->name');";
     }
 
+    CssJsLoad::set_script("
+var theme = '$this->theme';
+
+$(document).ready(function() {
+
+  editores['$this->name'] = CodeMirror.fromTextArea($('.codemirror-textarea_$this->name')[0], {
+    selectionPointer: true,
+    lineNumbers: true,
+    styleActiveLine: true,
+    matchBrackets: true,
+    autorefresh:true,
+    extraKeys: {'Ctrl-Space': 'autocomplete'},
+  });
+  editores['$this->name'].setOption('theme', theme);
+
+  editores['$this->name'].on('change', function(e) {
+    // console.log('debug: '+'$this->name');
+    $str_on_change
+  });
+
+});
+");
+
     return <<<EOD
 
 <!-- WInputCode -->
@@ -66,29 +89,6 @@ class WInputCode
 <div style="width: 100%;">
 <textarea id="$this->name" class="codemirror-textarea_$this->name" name="$this->name">$value</textarea>
 </div>
-
-<script>
-var theme = '$this->theme';
-
-$(document).ready(function() {
-
-  editores['$this->name'] = CodeMirror.fromTextArea($(".codemirror-textarea_$this->name")[0], {
-    selectionPointer: true,
-    lineNumbers: true,
-    styleActiveLine: true,
-    matchBrackets: true,
-    autorefresh:true,
-    extraKeys: {"Ctrl-Space": "autocomplete"},
-  });
-  editores['$this->name'].setOption("theme", theme);
-
-  editores['$this->name'].on('change', function(e) {
-    // console.log("debug: "+'$this->name');
-    $str_on_change
-  });
-
-});
-</script>
 <!-- /WInputCode -->
 
 EOD;
