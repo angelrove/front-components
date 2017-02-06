@@ -1,7 +1,6 @@
 <?
 /**
  *  @author José A. Romero Vegas <jangel.romero@gmail.com>
- *  2016
  *
  */
 
@@ -23,9 +22,9 @@ class ReCaptcha
     CssJsLoad::set('https://www.google.com/recaptcha/api.js');
   }
   //------------------------------------------------------------------
-  public function getCaptcha()
+  public function get()
   {
-     echo '<div class="g-recaptcha" data-sitekey="'.$this->site_key.'"></div>';
+     return '<div class="g-recaptcha" data-sitekey="'.$this->site_key.'"></div>';
   }
   //------------------------------------------------------------------
   public function isValid()
