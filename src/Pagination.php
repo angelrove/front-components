@@ -8,7 +8,7 @@
  *    $example->setUrlFormat('?query='.$_GET['query'].'&id_page=[id_page]');
  *
  *    $listRows  = $example->getListRows();
- *    $listPages = $example->getHtmPaginas();
+ *    $listPages = $example->get();
  *
  */
 
@@ -185,7 +185,7 @@ class Pagination
     return '<div>Total: '.$total.' &nbsp; Mostrando: '.$desde.' - '.$hasta.'</div>';
   }
   //----------------------------------------------------------------------
-  public function getHtmPaginas()
+  public function get()
   {
     $htmPrev    = '<div class="WPaging_PrevNext">&laquo; '.$this->labels['prev'].'</div>';
     $htmPaginas = '<span> 1 </span>';
