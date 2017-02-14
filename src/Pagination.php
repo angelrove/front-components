@@ -77,7 +77,7 @@ class Pagination
      $sqlQ .= $sqlLimit;
 
      // DEBUG ----
-     if($CONFIG_APP['debug']['SQL']) {
+     if(DEBUG_SQL) {
         print_r2('DEBUG_SQL: '.$sqlQ);
      }
      //-----------
