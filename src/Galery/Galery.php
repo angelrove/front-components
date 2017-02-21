@@ -23,7 +23,7 @@ class Galery
    function __construct($id_galery, $conf_tipo, $conf_canvas, $conf_titulo)
    {
       // Libs -------
-      Vendor::usef('lightbox');
+      // Vendor::usef('lightbox');
 
       // Options ---
       $this->id_galery   = $id_galery;
@@ -47,7 +47,7 @@ class Galery
          break;
 
          case 'slider':
-            Vendor::usef('Flickity');
+            // Vendor::usef('Flickity'); // By default
          break;
       }
    }

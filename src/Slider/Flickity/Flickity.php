@@ -28,7 +28,7 @@ class Flickity
       $this->images_subdir = $images_subdir;
 
       //--------
-      Vendor::usef('Flickity');
+      // Vendor::usef('Flickity');
 
       CssJsLoad::set(__DIR__.'/styles.css');
       CssJsLoad::set(__DIR__.'/scripts.js');
