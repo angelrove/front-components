@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  *  @author José A. Romero Vegas <jangel.romero@gmail.com>
  *
@@ -8,44 +8,44 @@ namespace angelrove\front_components;
 
 use angelrove\utils\CssJsLoad;
 
-
 class ReCaptcha
 {
-  private $secret_key;
+    private $secret_key;
 
-  //------------------------------------------------------------------
-  function __construct($site_key, $secret_key)
-  {
-    $this->site_key   = $site_key;
-    $this->secret_key = $secret_key;
+    //------------------------------------------------------------------
+    public function __construct($site_key, $secret_key)
+    {
+        $this->site_key   = $site_key;
+        $this->secret_key = $secret_key;
 
-    CssJsLoad::set('https://www.google.com/recaptcha/api.js');
-  }
-  //------------------------------------------------------------------
-  public function get()
-  {
-     return '<div class="g-recaptcha" data-sitekey="'.$this->site_key.'"></div>';
-  }
-  //------------------------------------------------------------------
-  public function isValid()
-  {
-    $url = 'https://www.google.com/recaptcha/api/siteverify';
-    $url_params = '?secret='.$this->secret_key.'&response='.$_POST['g-recaptcha-response'];
-
-    $response = file_get_contents($url.$url_params);
-    $data = json_decode($response);
-
-    // DEBUG ----
-    // print_r2($url.$url_params); print_r2($data); exit();
-
-    // OK
-    if(isset($data->success) && $data->success == true) {
-       return 1;
+        CssJsLoad::set('https://www.google.com/recaptcha/api.js');
     }
-    // KO
-    else {
-       return 0;
+    //------------------------------------------------------------------
+    public function get()
+    {
+        return '<div class="g-recaptcha" data-sitekey="' . $this->site_key . '"></div>';
     }
-  }
-  //------------------------------------------------------------------
+    //------------------------------------------------------------------
+    public function isValid()
+    {
+        $url        = 'https://www.google.com/recaptcha/api/siteverify';
+        $url_params = '?secret=' . $this->secret_key .
+                      '&response=' . $_POST['g-recaptcha-response'];
+
+        $response = file_get_contents($url . $url_params);
+        $data     = json_decode($response);
+
+        // DEBUG ----
+        // print_r2($url.$url_params); print_r2($data); exit();
+
+        // OK
+        if (isset($data->success) && $data->success == true) {
+            return 1;
+        }
+        // KO
+        else {
+            return 0;
+        }
+    }
+    //------------------------------------------------------------------
 }

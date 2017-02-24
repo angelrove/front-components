@@ -1,28 +1,30 @@
-
 #main_slider {
-  height: initial;
-  padding: 0;
+    height: initial;
+    padding: 0;
 }
+
 #main_slider .carousel {
-  background: #EEE;
-  height: initial;
+    background: #EEE;
+    height: initial;
 }
+
 
 /*-- caption --*/
-#main_slider .carousel-caption {
-}
+
+#main_slider .carousel-caption {}
+
 
 /*-- carousel-cell --*/
+
 #main_slider .carousel-cell {
-  width: 100%;
-  margin-right: 5px;
-  background: #333;
+    width: 100%;
+    margin-right: 5px;
+    background: #333;
 }
 
 #main_slider .carousel-cell-image {
-  width: 100%;
-  min-height: 280px;
-
-  display: block;
-  margin: 0 auto;
+    width: 100%;
+    min-height: 280px;
+    display: block;
+    margin: 0 auto;
 }

@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * Utiliza la librería: Camera slideshow
  *  www.pixedelic.com, https://github.com/pixedelic/Camera
@@ -6,61 +6,60 @@
 
 namespace angelrove\front_components\Slider\Camera;
 
-use angelrove\utils\Vendor;
 use angelrove\utils\CssJsLoad;
-
+use angelrove\utils\Vendor;
 
 class Camera
 {
-   private $id_slider = 'Slider_Camera';
-   private $images = false;
-   private $images_subdir = '';
-   private $options = '';
+    private $id_slider     = 'Slider_Camera';
+    private $images        = false;
+    private $images_subdir = '';
+    private $options       = '';
 
-   //-------------------------------------------------
-   /*
-    * $images: id, file_foto, nombre, texto
-    */
-   function __construct($images, $images_subdir)
-   {
-      //--------
-      $this->images = $images;
-      $this->images_subdir = $images_subdir;
+    //-------------------------------------------------
+    /*
+     * $images: id, file_foto, nombre, texto
+     */
+    public function __construct($images, $images_subdir)
+    {
+        //--------
+        $this->images        = $images;
+        $this->images_subdir = $images_subdir;
 
-      //--------
-      Vendor::usef('camera');
+        //--------
+        Vendor::usef('camera');
 
-      CssJsLoad::set(__DIR__.'/styles.css');
-      // CssJsLoad::set(__DIR__.'/scripts.js');
-   }
-   //-------------------------------------------------
-   public function set_id($id_slider)
-   {
-      $this->id_slider = $id_slider;
-   }
-   //-------------------------------------------------
-   public function set_options($options)
-   {
-      $this->options = $options;
-   }
-   //-------------------------------------------------
-   public function show()
-   {
-      if(!$this->images) {
-         return false;
-      }
+        CssJsLoad::set(__DIR__ . '/styles.css');
+        // CssJsLoad::set(__DIR__.'/scripts.js');
+    }
+    //-------------------------------------------------
+    public function set_id($id_slider)
+    {
+        $this->id_slider = $id_slider;
+    }
+    //-------------------------------------------------
+    public function set_options($options)
+    {
+        $this->options = $options;
+    }
+    //-------------------------------------------------
+    public function show()
+    {
+        if (!$this->images) {
+            return false;
+        }
 
-      /*
-       imagePath: '../images/', //he path to the image folder (it serves for the blank.gif, when you want to display videos)
+        /*
+        imagePath: '../images/', //he path to the image folder (it serves for the blank.gif, when you want to display videos)
 
-       easing: 'easeInOutExpo',  //for the complete list http://jqueryui.com/demos/effect/easing.html
+        easing: 'easeInOutExpo',  //for the complete list http://jqueryui.com/demos/effect/easing.html
 
-       fx: 'random', //'random','simpleFade', 'curtainTopLeft', 'curtainTopRight', 'curtainBottomLeft', 'curtainBottomRight', 'curtainSliceLeft', 'curtainSliceRight', 'blindCurtainTopLeft', 'blindCurtainTopRight', 'blindCurtainBottomLeft', 'blindCurtainBottomRight', 'blindCurtainSliceBottom', 'blindCurtainSliceTop', 'stampede', 'mosaic', 'mosaicReverse', 'mosaicRandom', 'mosaicSpiral', 'mosaicSpiralReverse', 'topLeftBottomRight', 'bottomRightTopLeft', 'bottomLeftTopRight', 'bottomLeftTopRight'
-      // can use more than one effect, just separate them with commas: 'simpleFade, scrollRight, scrollBottom'
+        fx: 'random', //'random','simpleFade', 'curtainTopLeft', 'curtainTopRight', 'curtainBottomLeft', 'curtainBottomRight', 'curtainSliceLeft', 'curtainSliceRight', 'blindCurtainTopLeft', 'blindCurtainTopRight', 'blindCurtainBottomLeft', 'blindCurtainBottomRight', 'blindCurtainSliceBottom', 'blindCurtainSliceTop', 'stampede', 'mosaic', 'mosaicReverse', 'mosaicRandom', 'mosaicSpiral', 'mosaicSpiralReverse', 'topLeftBottomRight', 'bottomRightTopLeft', 'bottomLeftTopRight', 'bottomLeftTopRight'
+        // can use more than one effect, just separate them with commas: 'simpleFade, scrollRight, scrollBottom'
 
-      */
-      CssJsLoad::set_script("
-        jQuery('#".$this->id_slider."').camera({
+         */
+        CssJsLoad::set_script("
+        jQuery('#" . $this->id_slider . "').camera({
            fx: 'random',
 
            // hover: false,
@@ -79,12 +78,12 @@ class Camera
            time: 5000,  // milliseconds
            transPeriod: 1500, // lenght of the sliding effect in milliseconds
 
-           ".$this->options."
+           " . $this->options . "
         });
       ");
 
-      // Tmpl -----
-      include('tmpl.inc');
-   }
-   //-------------------------------------------------
+        // Tmpl -----
+        include 'tmpl.inc';
+    }
+    //-------------------------------------------------
 }
