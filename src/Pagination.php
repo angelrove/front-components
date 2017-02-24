@@ -132,7 +132,7 @@ class Pagination
 
         // Comprobaciones
         if ($this->maxPages && ($this->id_page > $this->maxPages)) {
-            require '404/404.php';
+            require 'errors/404.php';
         }
     }
     //----------------------------------------------------------------------
