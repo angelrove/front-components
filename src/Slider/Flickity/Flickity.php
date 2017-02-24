@@ -19,7 +19,7 @@ class Flickity
     /*
      * $images: id, file_foto, nombre, texto
      */
-    public function __construct($images, $images_subdir)
+    public function __construct(array $images, $images_subdir)
     {
         //--------
         $this->images        = $images;

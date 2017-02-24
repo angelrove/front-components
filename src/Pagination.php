@@ -45,8 +45,6 @@ class Pagination
     //----------------------------------------------------------------------
     public function __construct($sqlQ, $numRowsPage, $id_page = '')
     {
-        global $CONFIG_APP;
-
         if (!$sqlQ) {
             return '';
         }

@@ -31,7 +31,7 @@ class Nivo
         Vendor::usef('nivo-slider-theme4');
     }
     //------------------------------------------
-    public static function show($images)
+    public static function show(array $images)
     {
         self::$id_slider .= self::$id_counter++;
 

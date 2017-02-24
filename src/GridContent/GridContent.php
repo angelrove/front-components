@@ -28,7 +28,7 @@ class GridContent
     }
     //-------------------------------------------------------------
     // $listFotos[]: file_foto, nombre, texto, url
-    public function get($listFotos, $subdir_uploads = '')
+    public function get(array $listFotos, $subdir_uploads = '')
     {
         if (!$listFotos) {
             return false;
