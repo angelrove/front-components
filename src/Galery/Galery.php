@@ -84,7 +84,12 @@ class Galery
         $htmListFotos = '';
         $c            = 0;
         foreach ($listFotos as $foto) {
-            $img     = FileUploaded::getInfo($foto->file_foto, $subdir_uploads);
+            $img = FileUploaded::getInfo($foto->file_foto, $subdir_uploads);
+            if (!$img) {
+                echo "Warning: failed to load: id=".$foto->id;
+                continue;
+            }
+
             $img_alt = htmlentities($foto->nombre);
             $title   = ($this->conf_titulo == 'hidden') ? '' : $foto->nombre;
 
