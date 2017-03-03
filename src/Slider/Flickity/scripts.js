@@ -3,7 +3,9 @@ var $carousel = $("#main_slider .carousel").flickity({
   pauseAutoPlayOnHover: false,
   pageDots: true,
   wrapAround: true,
-  lazyLoad: true
+  lazyLoad: true,
+  setGallerySize: true,
+  adaptiveHeight: false
 });
 
 var $caption_title = $("#main_slider .caption-title");

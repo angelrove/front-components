@@ -1,7 +1,6 @@
 <?php
 /**
- * Utiliza la librería: Flickity
- *   http://flickity.metafizzy.co/
+ * use: http://flickity.metafizzy.co/
  */
 
 namespace angelrove\front_components\Slider\Flickity;
