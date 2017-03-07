@@ -84,19 +84,21 @@ class Galery
         $htmListFotos = '';
         $c            = 0;
         foreach ($listFotos as $foto) {
+            // Image ---------
             $img = FileUploaded::getInfo($foto->file_foto, $subdir_uploads);
             if (!$img) {
                 echo "Warning: failed to load: id=".$foto->id;
                 continue;
             }
 
+            //--------------
             $img_alt = htmlentities($foto->nombre);
             $title   = ($this->conf_titulo == 'hidden') ? '' : $foto->nombre;
 
-            // Image ------
+            // HTM Image ------
             $htmImg = '';
-            if ($this->conf_tipo == 'isotope' && $this->conf_canvas) {
-                $htmImg = CanvasImageCrop::get_thumb($foto->id, $img['ruta_completa_th'], 320, 210, $img_alt);
+            if ($this->conf_tipo = 'isotope' && $this->conf_canvas) {
+                $htmImg = CanvasImageCrop::get_thumb($foto->id, $img['path_completo_th'], $img['ruta_completa_th'], 320, 210, $img_alt);
             } else {
                 $htmImg = '<img src="' . $img['ruta_completa_th'] . '" class="img-responsive" alt="' . $img_alt . '">';
             }

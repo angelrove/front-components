@@ -13,14 +13,14 @@ CssJsLoad::set(__DIR__ . '/lib.js');
 class CanvasImageCrop
 {
     //--------------------------------------------------------------------
-    public static function get_thumb($id, $img, $width, $height, $alt)
+    public static function get_thumb($id, $img_path, $img_url, $width, $height, $alt)
     {
         $srcX = 0;
         $srcY = 0;
         // $alt = htmlentities($alt);
 
         //----
-        $datosImg   = @getimagesize($_SERVER['DOCUMENT_ROOT'] . $img);
+        $datosImg   = getimagesize($img_path);
         $img_width  = $datosImg[0];
         $img_height = $datosImg[1];
 
@@ -37,7 +37,7 @@ class CanvasImageCrop
 
         //----
         CssJsLoad::set_script(
-            'CanvasImageCrop_draw("canvas_' . $id . '", "' . $img . '", ' . $srcX . ', ' . $srcY . ', ' . $width . ', ' . $height . ');'
+            'CanvasImageCrop_draw("canvas_' . $id . '", "' . $img_url . '", ' . $srcX . ', ' . $srcY . ', ' . $width . ', ' . $height . ');'
         );
 
         //----
