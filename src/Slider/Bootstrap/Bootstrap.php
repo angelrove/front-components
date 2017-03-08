@@ -15,7 +15,10 @@ class Bootstrap
     private $images_subdir = '';
 
     //------------------------------------------
-    public function __construct(images_subdir$images, $images_subdir)
+    /*
+     * $images: id, file_foto, nombre, texto
+     */
+    public function __construct(array $images, $images_subdir)
     {
         //--------
         $this->images        = $images;
