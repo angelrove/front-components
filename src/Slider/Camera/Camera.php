@@ -38,6 +38,15 @@ class Camera
         $this->id_slider = $id_slider;
     }
     //-------------------------------------------------
+    public function set_height($height)
+    {
+        // CssJsLoad::set_css_block('
+        //     #main_slider .carousel-cell {
+        //         height: '.$height.';
+        //     }
+        // ');
+    }
+    //-------------------------------------------------
     public function set_options($options)
     {
         $this->options = $options;

@@ -12,7 +12,8 @@ class Flickity
     private $id_slider     = 'Slider_Flickity';
     private $images        = false;
     private $images_subdir = '';
-    private $options       = '';
+    // private $height;
+    private $options = '';
 
     //-------------------------------------------------
     /*
@@ -34,6 +35,26 @@ class Flickity
     public function set_id($id_slider)
     {
         $this->id_slider = $id_slider;
+    }
+    //-------------------------------------------------
+    public function set_height($height)
+    {
+        switch ($height) {
+            case 'all':
+                $height = '80vh';
+                break;
+            case '':
+                return;
+            default:
+                $height .= 'px';
+                break;
+        }
+
+        CssJsLoad::set_css_block('
+            #main_slider .carousel-cell {
+                height: '.$height.';
+            }
+        ');
     }
     //-------------------------------------------------
     public function set_options($options)

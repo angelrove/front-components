@@ -27,6 +27,31 @@ class Bootstrap
         //--------
         CssJsLoad::set(__DIR__ . '/styles.css');
     }
+    //-------------------------------------------------
+    public function set_id($id_slider)
+    {
+        $this->id_slider = $id_slider;
+    }
+    //-------------------------------------------------
+    public function set_height($height)
+    {
+        switch ($height) {
+            case 'all':
+                $height = '80vh';
+                break;
+            case '':
+                return;
+            default:
+                $height .= 'px';
+                break;
+        }
+
+        CssJsLoad::set_css_block('
+            #main_slider {
+                height: '.$height.';
+            }
+        ');
+    }
     //------------------------------------------
     /*
      *  $images->: file_img, nombre, descripcion

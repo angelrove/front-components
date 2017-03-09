@@ -1,7 +1,7 @@
 var $carousel = $("#main_slider .carousel").flickity({
-  autoPlay: true,
   pauseAutoPlayOnHover: false,
-  pageDots: true,
+  autoPlay: false,
+  pageDots: false,
   wrapAround: true,
   lazyLoad: true,
   setGallerySize: true,
