@@ -1,7 +1,12 @@
+
 #myCarousel {
     height: 400px;
     background-color: #fff;
     position: relative;
+}
+
+#main_slider .Slider_Bootstrap {
+    background: #333;
 }
 
 #myCarousel .item, #myCarousel .item.active, #myCarousel .carousel-inner {

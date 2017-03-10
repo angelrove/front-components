@@ -2,7 +2,7 @@
 use angelrove\utils\FileUploaded;
 ?>
 
-<div id="main_slider" class="border_shadow Slider_Camera">
+<div id="main_slider" class="Slider_Camera border_shadow">
 <div id="<?=$this->id_slider?>" class="myCarousel camera_wrap camera_azure_skin">
    <?
    foreach($this->images as $image) {

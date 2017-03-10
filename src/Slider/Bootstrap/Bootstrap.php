@@ -6,49 +6,43 @@
 
 namespace angelrove\front_components\Slider\Bootstrap;
 
+use angelrove\front_components\Slider\Slider;
 use angelrove\utils\CssJsLoad;
 
-class Bootstrap
+class Bootstrap extends Slider
 {
-    private $id_slider     = 'main_slider';
-    private $images        = false;
-    private $images_subdir = '';
-
     //------------------------------------------
-    /*
-     * $images: id, file_foto, nombre, texto
-     */
     public function __construct(array $images, $images_subdir)
     {
-        //--------
-        $this->images        = $images;
-        $this->images_subdir = $images_subdir;
+        parent::__construct($images, $images_subdir);
+        $this->id_slider = 'Slider_Bootstrap';
 
         //--------
         CssJsLoad::set(__DIR__ . '/styles.css');
     }
     //-------------------------------------------------
-    public function set_id($id_slider)
+    public function set_height($value)
     {
-        $this->id_slider = $id_slider;
-    }
-    //-------------------------------------------------
-    public function set_height($height)
-    {
-        switch ($height) {
-            case 'all':
-                $height = '80vh';
-                break;
-            case '':
-                return;
-            default:
-                $height .= 'px';
-                break;
+        if (!$value) {
+            return;
         }
 
         CssJsLoad::set_css_block('
             #main_slider {
-                height: '.$height.';
+                height: '.$value.';
+            }
+        ');
+    }
+    //-------------------------------------------------
+    public function set_opacity($value)
+    {
+        if (!$value) {
+            return;
+        }
+
+        CssJsLoad::set_css_block('
+            #myCarousel .fill {
+                opacity: '.$value.';
             }
         ');
     }

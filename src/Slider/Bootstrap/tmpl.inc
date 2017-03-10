@@ -2,7 +2,7 @@
 use angelrove\utils\FileUploaded;
 ?>
 
-<div id="<?=$this->id_slider?>" class="Slider_Bootstrap border_shadow">
+<div id="main_slider" class="Slider_Bootstrap border_shadow">
   <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000" data-wrap="true">
 
     <!-- Indicators -->

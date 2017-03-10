@@ -20,6 +20,8 @@
 /*------------------*/
 #main_slider {
     padding: 0;
+}
+#main_slider .Slider_Flickity {
     background: #333;
 }
 

@@ -6,25 +6,19 @@
 
 namespace angelrove\front_components\Slider\Camera;
 
+use angelrove\front_components\Slider\Slider;
 use angelrove\utils\CssJsLoad;
 use angelrove\utils\Vendor;
 
-class Camera
+class Camera extends Slider
 {
-    private $id_slider     = 'Slider_Camera';
-    private $images        = false;
-    private $images_subdir = '';
-    private $options       = '';
+    private $options;
 
     //-------------------------------------------------
-    /*
-     * $images: id, file_foto, nombre, texto
-     */
     public function __construct(array $images, $images_subdir)
     {
-        //--------
-        $this->images        = $images;
-        $this->images_subdir = $images_subdir;
+        parent::__construct($images, $images_subdir);
+        $this->id_slider = 'Slider_Camera';
 
         //--------
         Vendor::usef('camera');
@@ -33,18 +27,22 @@ class Camera
         // CssJsLoad::set(__DIR__.'/scripts.js');
     }
     //-------------------------------------------------
-    public function set_id($id_slider)
-    {
-        $this->id_slider = $id_slider;
-    }
-    //-------------------------------------------------
     public function set_height($height)
     {
-        // CssJsLoad::set_css_block('
-        //     #main_slider .carousel-cell {
-        //         height: '.$height.';
-        //     }
-        // ');
+        $this->height = $height;
+    }
+    //-------------------------------------------------
+    public function set_opacity($value)
+    {
+        if (!$value) {
+            return;
+        }
+
+        CssJsLoad::set_css_block('
+            #main_slider .camera_target {
+                opacity: '.$value.';
+            }
+        ');
     }
     //-------------------------------------------------
     public function set_options($options)
@@ -67,6 +65,11 @@ class Camera
         // can use more than one effect, just separate them with commas: 'simpleFade, scrollRight, scrollBottom'
 
          */
+
+        // height ('auto', '50%', '390px') ---
+        $height = ($this->height)? $this->height : '35%';
+
+        //---------
         CssJsLoad::set_script("
         jQuery('#" . $this->id_slider . "').camera({
            fx: 'random',
@@ -74,9 +77,9 @@ class Camera
            // hover: false,
            // opacityOnGrid: false,
 
-           height: '35%', // 'auto', '50%', '390px'
-           loader: 'bar',
-           playPause: false,
+           height:     '$height',
+           loader:     'bar',
+           playPause:  false,
            pagination: false,
            thumbnails: false,
 

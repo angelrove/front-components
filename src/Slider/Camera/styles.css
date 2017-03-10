@@ -1,4 +1,11 @@
 
+#main_slider {
+  height: initial;
+}
+#main_slider #Slider_Camera {
+  background: #333;
+}
+
 .camera_fakehover {
   /*min-height: 250px;*/
 }
