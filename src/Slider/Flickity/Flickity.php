@@ -33,8 +33,8 @@ class Flickity extends Slider
         }
 
         CssJsLoad::set_css_block('
-            #main_slider .carousel-cell {
-                height: '.$height.';
+            #main_slider .carousel {
+              padding-bottom: '.$height.';
             }
         ');
     }

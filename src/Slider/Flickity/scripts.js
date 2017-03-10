@@ -4,8 +4,9 @@ var $carousel = $("#main_slider .carousel").flickity({
   pageDots: false,
   wrapAround: true,
   lazyLoad: true,
-  setGallerySize: true,
-  adaptiveHeight: false
+  adaptiveHeight: false,
+
+  setGallerySize: false
 });
 
 var $caption_title = $("#main_slider .caption-title");

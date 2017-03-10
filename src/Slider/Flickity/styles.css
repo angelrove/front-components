@@ -1,13 +1,12 @@
+
 /*--- Height -------*/
 #main_slider,
 #main_slider .carousel {
     height: initial;
 }
-#main_slider .carousel-cell-image {
-    min-height: 220px;
-}
 
-/*-- setGallerySize: true --*/
+/*------- setGallerySize: false ---------*/
+/* height manual */
 /*
 #main_slider .carousel {
     height: 380px;
@@ -17,11 +16,23 @@
 }
 */
 
+/* height, as percentage of width */
+#main_slider .carousel {
+  padding-bottom: 43.3%;
+}
+#main_slider .carousel .flickity-viewport {
+  position: absolute;
+  width: 100%;
+}
+#main_slider .carousel-cell {
+  height: 100%;
+}
+
 /*------------------*/
 #main_slider {
     padding: 0;
 }
-#main_slider .Slider_Flickity {
+#main_slider .carousel {
     background: #333;
 }
 
@@ -33,7 +44,6 @@
 #main_slider .carousel-cell {
     width: 100%;
     margin-right: 5px;
-    background: #333;
 }
 
 #main_slider .carousel-cell-image {
