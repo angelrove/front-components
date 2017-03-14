@@ -87,7 +87,7 @@ class Galery
             // Image ---------
             $img = FileUploaded::getInfo($foto->file_foto, $subdir_uploads);
             if (!$img) {
-                echo "Warning: failed to load: id=".$foto->id;
+                echo "Warning: Galery failed to load image: ".$foto->id;
                 continue;
             }
 
