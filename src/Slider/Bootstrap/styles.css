@@ -1,7 +1,7 @@
 
 #myCarousel {
     height: 400px;
-    background-color: #fff;
+    background-color: #333;
     position: relative;
 }
 
@@ -14,11 +14,14 @@
 }
 
 #myCarousel .fill {
-    width: 100%;
+    /*width: initial;*/
     height: 100%;
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+#myCarousel .carousel-inner>.item>img {
+    max-width: initial;
 }
