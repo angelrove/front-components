@@ -17,7 +17,7 @@ function GetCookie(name) {
    return null;
 }
 //-----------------------------------------
-function aceptar_cookies(){
+function cookies_accept(){
    var expire = new Date();
    expire = new Date(expire.getTime()+7776000000);
    document.cookie="cookies_surestao=aceptada; expires="+expire;

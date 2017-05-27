@@ -12,12 +12,24 @@ use angelrove\utils\CssJsLoad;
 class PCookies
 {
     private $link_legaldoc;
+    private $lang;
 
     //----------------------------------------------------------
-    public function __construct($link_legaldoc)
+    public function __construct($link_legaldoc, $lang='es')
     {
         $this->link_legaldoc = $link_legaldoc;
+        $this->lang          = $lang;
 
+        //---------
+        if ($this->lang != 'es' && $this->lang != 'en') {
+            $this->lang = 'en';
+        }
+
+        if ($this->lang == 'en') {
+            $this->link_legaldoc = 'http://cookies.insites.com/';
+        }
+
+        //---------
         CssJsLoad::set(__DIR__ . '/styles.css');
         CssJsLoad::set(__DIR__ . '/scripts.js');
     }

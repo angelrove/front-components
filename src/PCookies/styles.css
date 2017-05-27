@@ -1,22 +1,25 @@
 
 #PCookies_overbox {
- position: fixed;
- bottom: 0px;
- left: 0px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
 
- z-index: 999999;
- width: 100%;
- display: none;
-}
-#PCookies_overbox #infobox {
- padding: 6px;
- text-align:center;
+  z-index: 999999;
+  width: 100%;
+  display: none;
+  padding: 10px 23px;
 
- background-color: rgba(83, 83, 83, 0.92);
- font-size: 13px;
- color:#e0dfdf;
+  background-color: rgba(64, 63, 63, 0.92);
+  color:#e0dfdf;
+  font-size: 14px;
 }
-#PCookies_overbox #infobox a {
- margin:0 7px;
- color:#fff;
+
+#PCookies_overbox .the_text {
+  float: left;
+}
+#PCookies_overbox a {
+  color:#fff; text-decoration: underline;
+}
+#PCookies_overbox button {
+  float: right;
 }
