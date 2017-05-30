@@ -26,7 +26,7 @@ class PCookies
         }
 
         if ($this->lang == 'en') {
-            $this->link_legaldoc = 'http://cookies.insites.com/';
+            $this->link_legaldoc = 'https://en.wikipedia.org/wiki/HTTP_cookie';
         }
 
         //---------
