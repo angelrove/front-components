@@ -59,8 +59,8 @@ class Video extends Slider
             return false;
         }
 
-        CssJsLoad::set_script("
-        ");
+        // CssJsLoad::set_script("
+        // ");
 
         include 'tmpl.inc';
     }
