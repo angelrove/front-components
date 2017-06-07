@@ -1,0 +1,103 @@
+/*-- height --*/
+.slider-video .height_video {
+    height: 440px;
+}
+@media (max-width: 768px) {
+  .slider-video .height_video {
+      height: initial !important;
+  }
+}
+
+
+/*-- Caption --*/
+.slider-video .video-caption {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    margin-top: 8%;
+    padding: 0 40px;
+
+    color: #fff;
+    text-shadow: 2px 2px #444444;
+}
+.slider-video .title {
+    font-size: 47px;
+
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-name: fadeInLeft;
+}
+
+.slider-video .description {
+    margin-top: 33px;
+    font-size: 20px;
+
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-name: fadeInRight;
+}
+
+/*-- Video --*/
+.slider-video {
+    background: black;
+}
+.slider-video .table-row.hero>#hero {
+    text-align: center;
+    vertical-align: middle;
+}
+.slider-video .hero-bg, .editorial-bg {
+    overflow: hidden;
+}
+.slider-video .hero-bg, .hero-bg .parallax-bg {
+    background-position: 60% center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.slider-video .moving-background {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    background-color: transparent;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*-------*/
+.slider-video .moving-background video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    opacity: 0.9;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+video {
+    object-fit: contain;
+}
+
+/* --- MEDIA ---*/
+/* Small devices */
+@media (max-width: 768px) {
+    .slider-video .moving-background video {
+        position: initial;
+    }
+    .slider-video .height_video {
+        height: auto;
+    }
+    .slider-video .title {
+        margin-top: 4%;
+        font-size: 32px;
+    }
+}
+
+/* Medium devices */
+@media (min-width: 992px) {}
+
+/* Large devices */
+@media (min-width: 1200px) {}
+
