@@ -32,7 +32,7 @@ class Video extends Slider
 
         CssJsLoad::set_css_block('
             .slider-video .height_video {
-                height: '.$value.';
+                max-height: '.$value.';
             }
         ');
     }
