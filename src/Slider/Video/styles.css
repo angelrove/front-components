@@ -1,15 +1,31 @@
-/*-- height --*/
-.slider-video .height_video {
-    max-height: 440px;
-    height: initial !important;
+
+/*-- Video --*/
+.slider-video {
+    background: black;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 0;
 }
-.slider-video .moving-background video {
+.slider-video .moving-background {
+    overflow: hidden;
+}
+
+.slider-video video {
     width: 100%;
     height: auto;
     z-index: -1;
     opacity: 0.9;
     -webkit-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
+}
+
+/*-- height --*/
+.slider-video .height_video {
+    max-height: 440px;
+    height: initial !important;
+}
+.slider-video video {
+    height: auto;
 }
 
 /*-- Caption --*/
@@ -19,6 +35,7 @@
     z-index: 1;
     margin-top: 8%;
     padding: 0 40px;
+    line-height: initial;
 
     color: #fff;
     text-shadow: 2px 2px #444444;
@@ -30,7 +47,6 @@
     animation-duration: 2s;
     animation-name: fadeInLeft;
 }
-
 .slider-video .description {
     margin-top: 33px;
     font-size: 24px;
@@ -39,38 +55,6 @@
     animation-duration: 2s;
     animation-name: fadeInRight;
 }
-
-/*-- Video --*/
-.slider-video {
-    background: black;
-}
-.slider-video .table-row.hero>#hero {
-    text-align: center;
-    vertical-align: middle;
-}
-.slider-video .hero-bg, .editorial-bg {
-    overflow: hidden;
-}
-.slider-video .hero-bg, .hero-bg .parallax-bg {
-    background-position: 60% center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.slider-video .moving-background {
-    position: relative;
-    overflow: hidden;
-    z-index: 0;
-    background-color: transparent;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-video {
-    object-fit: contain;
-}
-
-/* --- MEDIA ---*/
 /* Small devices */
 @media (max-width: 768px) {
     .slider-video .title {
@@ -88,4 +72,3 @@ video {
 
 /* Large devices */
 @media (min-width: 1200px) {}
-
