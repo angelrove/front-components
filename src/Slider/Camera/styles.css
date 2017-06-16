@@ -15,6 +15,14 @@
   vertical-align: top;
 }
 
+/* Caption */
+@media screen and (min-width: 768px) {
+    .carousel-caption {
+        right: 11%;
+        left:  11%;
+    }
+}
+
 /* Prev / Next */
 .camera_prev > span,
 .camera_next > span {
@@ -36,7 +44,7 @@
   display: block;
   padding: 9px 13px;
   font: normal normal normal 24px/1 FontAwesome;
-  color:#007fff;
+  color: #007fff;
 }
 
 /* <, > */
