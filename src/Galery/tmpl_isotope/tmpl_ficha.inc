@@ -3,11 +3,11 @@
   <a id="t_<?=$foto->id?>" class="thumb" href="<?=$lightbox_link?>" <?=$lightbox_params?>>
     <?=$htmImg?>
 
-    <? if($title) { ?>
+    <?php  if($title) { ?>
       <div class="thumb_overlay thumb_overlay-<?=$this->conf_titulo?>">
          <h4><?=$title?></h4>
          <p><?=$foto->texto?></p>
       </div>
-    <? } ?>
+    <?php  } ?>
   </a>
 </div>

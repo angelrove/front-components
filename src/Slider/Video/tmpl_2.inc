@@ -1,4 +1,4 @@
-<?
+<?php
 use angelrove\utils\FileUploaded;
 
 $video_src = array_values($this->images)[0];

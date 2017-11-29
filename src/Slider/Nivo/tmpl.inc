@@ -13,9 +13,9 @@
 
   <div class="slider-wrapper theme-light">
       <div id="<?=self::$id_slider?>" class="nivoSlider">
-         <? foreach($images as $key => $value) { ?>
+         <?php  foreach($images as $key => $value) { ?>
              <img src="<?=$value?>" title="<?=$value?>" />
-         <? } ?>
+         <?php  } ?>
       </div>
 
       <div id="htmlcaption" class="nivo-html-caption">
