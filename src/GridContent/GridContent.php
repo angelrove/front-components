@@ -13,6 +13,7 @@ use angelrove\utils\FileUploaded;
 class GridContent
 {
     private $id_galerya;
+    private $id_grid;
     private $conf_max_cols;
     private $conf_style;
 
