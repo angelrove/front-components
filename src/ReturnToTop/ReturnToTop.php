@@ -21,12 +21,12 @@ class ReturnToTop
     //----------------------------------------------------
     public function show()
     {
-        echo '<a href="javascript:" id="return-to-top" class="bt-return-to"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>';
+        echo '<a href="javascript:" id="return-to-top" class="bt-return-to"><i class="fas fa-chevron-up" aria-hidden="true"></i></a>';
     }
     //----------------------------------------------------
     public function show_toBottom()
     {
-        echo '<a href="javascript:" id="return-to-bottom" class="bt-return-to"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>';
+        echo '<a href="javascript:" id="return-to-bottom" class="bt-return-to"><i class="fas fa-chevron-down" aria-hidden="true"></i></a>';
     }
     //----------------------------------------------------
 }
