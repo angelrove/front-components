@@ -23,7 +23,7 @@
  -ms-transition: all 0.3s ease;
  transition: all 0.3s ease;
 }
-.bt-return-to i {
+.bt-return-to svg {
  position: relative;
  color: #fff;
  margin: 0;
@@ -38,7 +38,7 @@
 .bt-return-to:hover {
  background: rgba(0, 0, 0, 0.9);
 }
-.bt-return-to:hover i {
+.bt-return-to:hover svg {
  color: #fff;
  top: 5px;
 }
