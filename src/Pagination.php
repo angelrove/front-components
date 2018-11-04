@@ -17,16 +17,8 @@ use angelrove\utils\Db_mysql;
 
 class Pagination
 {
-    private $labels_es = array(
-        'prev' => 'Anterior',
-        'sig'  => 'Siguiente');
-    private $labels_en = array(
-        'prev' => 'Prev',
-        'sig'  => 'Next');
-    private $labels_fr = array(
-        'prev' => 'précédent',
-        'sig'  => 'suivant');
     private $labels;
+    private $listLabels = array();
 
     private $numRowsPage;
     private $id_page;
@@ -43,13 +35,23 @@ class Pagination
     //----------------------------------------------------------------------
     // PUBLIC
     //----------------------------------------------------------------------
-    public function __construct($sqlQ, $numRowsPage, $id_page = '')
+    public function __construct($sqlQ, $numRowsPage, $id_page = '', $lang = 'es')
     {
         if (!$sqlQ) {
             return '';
         }
 
-        $this->labels      = $this->labels_es;
+        $listLabels['es'] = array(
+            'prev' => 'Anterior',
+            'sig'  => 'Siguiente');
+        $listLabels['en'] = array(
+            'prev' => 'Prev',
+            'sig'  => 'Next');
+        $listLabels['fr'] = array(
+            'prev' => 'précédent',
+            'sig'  => 'suivant');
+
+        $this->labels      = $listLabels[$lang];
         $this->numRowsPage = $numRowsPage;
 
         /** id_page **/
