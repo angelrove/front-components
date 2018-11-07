@@ -94,15 +94,6 @@ class Pagination
     //----------------------------------------------------------------------
     // SET
     //----------------------------------------------------------------------
-    public function setLocal($local)
-    {
-        if (!$local) {
-            return;
-        }
-
-        $this->labels = $this->{'labels_' . strtolower($local)};
-    }
-    //----------------------------------------------------------------------
     /**
      * $urlFormat = 'index[id_page].html'
      * $urlFormat = 'FRIENDLY';
