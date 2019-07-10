@@ -28,7 +28,7 @@ class GridContent
         CssJsLoad::set(__DIR__ . '/style.css');
     }
     //-------------------------------------------------------------
-    // $listFotos[]: file_foto, nombre, texto, url
+    // $listFotos[]: file_foto, name, texto, url
     public function get(array $listFotos, $subdir_uploads = '')
     {
         if (!$listFotos) {
@@ -50,8 +50,8 @@ class GridContent
         foreach ($listFotos as $foto) {
             // Image ------
             $datos_img    = FileUploaded::getInfo($foto->file_foto, $subdir_uploads);
-            $htm_img      = FileUploaded::getHtmlImg($datos_img, '', $foto->nombre, '', false, $foto->url);
-            $foto->nombre = ($foto->url) ? '<a href="' . $foto->url . '">' . $foto->nombre . '</a>' : $foto->nombre;
+            $htm_img      = FileUploaded::getHtmlImg($datos_img, '', $foto->name, '', false, $foto->url);
+            $foto->name = ($foto->url) ? '<a href="' . $foto->url . '">' . $foto->name . '</a>' : $foto->name;
 
             // tmpl Ficha -----
             ob_start();

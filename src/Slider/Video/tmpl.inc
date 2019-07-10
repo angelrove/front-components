@@ -9,7 +9,7 @@ $datos_img = FileUploaded::getInfo($video_src->file_img, $this->images_subdir);
   <div class="table-row hero">
      <div id="hero" class="height_video hero-bg moving-background filler hero-video-still video-loaded">
         <div class="video-caption">
-          <div class="title animated"><?=$video_src->nombre?></div>
+          <div class="title animated"><?=$video_src->name?></div>
           <div class="description animated"><?=nl2br($video_src->descripcion)?></div>
         </div>
 
