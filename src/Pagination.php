@@ -75,12 +75,6 @@ class Pagination
         $sqlQ = preg_replace('/SELECT/', 'SELECT SQL_CALC_FOUND_ROWS ', $sqlQ, 1);
         $sqlQ .= $sqlLimit;
 
-        // DEBUG ----
-        if (DEBUG_SQL) {
-            print_r2('DEBUG_SQL: ' . $sqlQ);
-        }
-        //-----------
-
         $this->listRows = Db_mysql::getListObject($sqlQ);
         $this->numRows  = Db_mysql::getValue("SELECT FOUND_ROWS()");
 
