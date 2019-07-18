@@ -31,9 +31,9 @@ use angelrove\utils\FileUploaded;
            <div class="fill" style="background-image:url('<?=$datos_img['ruta_completa']?>');"></div>
            <!-- img src="<?php //=$datos_img['ruta_completa']?>" -->
 
-           <?php  if($image->nombre) { ?>
+           <?php  if($image->name) { ?>
              <div class="carousel-caption animated" id="carousel-caption-<?=$image->id?>">
-               <div class="caption-title animated"><?=$image->nombre?></div>
+               <div class="caption-title animated"><?=$image->name?></div>
                <div class="caption-description animated"><?=nl2br($image->descripcion)?></div>
              </div>
            <?php  } ?>

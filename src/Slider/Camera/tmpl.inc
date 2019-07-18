@@ -11,11 +11,11 @@ use angelrove\utils\FileUploaded;
 
       <div data-thumb="<?=$datos_img['ruta_completa_th']?>" data-src="<?=$datos_img['ruta_completa']?>">
 
-        <!-- <div class="camera_caption fadeFromRight"><?php //=$image->nombre?></div> -->
+        <!-- <div class="camera_caption fadeFromRight"><?php //=$image->name?></div> -->
 
-        <?php  if($image->nombre) { ?>
+        <?php  if($image->name) { ?>
           <div class="carousel-caption animated" id="carousel-caption-<?=$image->id?>">
-            <div class="caption-title animated"><?=$image->nombre?></div>
+            <div class="caption-title animated"><?=$image->name?></div>
             <div class="caption-description animated"><?=nl2br($image->texto)?></div>
           </div>
         <?php  } ?>

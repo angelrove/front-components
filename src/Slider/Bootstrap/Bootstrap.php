@@ -48,7 +48,7 @@ class Bootstrap extends Slider
     }
     //------------------------------------------
     /*
-     *  $images->: file_img, nombre, descripcion
+     *  $images->: file_img, name, descripcion
      */
     public function show()
     {

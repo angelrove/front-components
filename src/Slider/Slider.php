@@ -18,7 +18,7 @@ abstract class Slider
 
     //------------------------------------------
     /*
-     * $images: [id], [file_foto], [nombre], [texto]
+     * $images: [id], [file_foto], [name], [texto]
      */
     public function __construct(array $images, $images_subdir)
     {

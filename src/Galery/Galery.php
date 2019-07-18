@@ -62,7 +62,7 @@ class Galery
         }
     }
     //-------------------------------------------------------------
-    // $listFotos: file_foto, nombre, texto, url
+    // $listFotos: file_foto, name, texto, url
     public function get($listFotos, $subdir_uploads)
     {
         if (!$listFotos) {
@@ -92,8 +92,8 @@ class Galery
             }
 
             //--------------
-            $img_alt = htmlentities($foto->nombre);
-            $title   = ($this->conf_titulo == 'hidden') ? '' : $foto->nombre;
+            $img_alt = htmlentities($foto->name);
+            $title   = ($this->conf_titulo == 'hidden') ? '' : $foto->name;
 
             // HTM Image ------
             $htmImg = '';
