@@ -8,7 +8,7 @@
     ],
     "require": {
         "php": "^7.2",
-        "angelrove/utils": "^3.0"
+        "angelrove/utils": "dev-master"
     },
     "autoload": {
         "psr-4": {
