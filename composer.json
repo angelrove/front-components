@@ -2,18 +2,17 @@
     "name": "angelrove/front-components",
     "type": "library",
     "description": "Front components",
+    "license": "MIT",
     "authors": [
-        {
-            "name": "Jose Angel Romero",
-            "email": "jangel.romero@gmail.com"
-        }
+        { "name": "Jose Angel Romero", "email": "jangel.romero@gmail.com" }
     ],
     "require": {
-
+        "php": "^7.1",
+        "angelrove/utils": "dev-master"
     },
     "autoload": {
-        "classmap": [
-
-        ]
+        "psr-4": {
+            "angelrove\\front_components\\": "vendor/angelrove/front-components/src/"
+        }
     }
 }
