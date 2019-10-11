@@ -14,6 +14,7 @@
 namespace angelrove\front_components;
 
 use angelrove\utils\Db_mysql;
+use Illuminate\Database\Capsule\Manager as DB;
 
 class Pagination
 {
@@ -75,7 +76,7 @@ class Pagination
         $sqlQ = preg_replace('/SELECT/', 'SELECT SQL_CALC_FOUND_ROWS ', $sqlQ, 1);
         $sqlQ .= $sqlLimit;
 
-        $this->listRows = Db_mysql::getListObject($sqlQ);
+        $this->listRows = DB::select($sqlQ);
         $this->numRows  = Db_mysql::getValue("SELECT FOUND_ROWS()");
 
         /** Nº páginas **/
