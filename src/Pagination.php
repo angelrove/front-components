@@ -43,14 +43,11 @@ class Pagination
         }
 
         $listLabels['es'] = array(
-            'prev' => 'Anterior',
-            'sig'  => 'Siguiente');
+            'Showing' => 'Mostrando',
+        );
         $listLabels['en'] = array(
-            'prev' => 'Prev',
-            'sig'  => 'Next');
-        $listLabels['fr'] = array(
-            'prev' => 'précédent',
-            'sig'  => 'suivant');
+            'Showing' => 'Showing',
+        );
 
         $this->labels      = $listLabels[$lang];
         $this->numRowsPage = $numRowsPage;
@@ -154,7 +151,7 @@ class Pagination
     //----------------------------------------------------------------------
     public function getLinkNext()
     {
-        $urlNext = '';
+        $urlNext = '#';
 
         if ($this->rango[1] > 1) {
             if ($this->id_page < $this->numTotalPages && $this->id_page < $this->maxPages) {
@@ -177,64 +174,61 @@ class Pagination
     //----------------------------------------------------------------------
     public function get()
     {
-        $htmPrev    = '<div class="WPaging_PrevNext">&laquo; ' . $this->labels['prev'] . '</div>';
-        $htmPaginas = '<span> 1 </span>';
+        $urlPrev = '#';
+        $prev_disabled = 'disabled';
+
+        $urlNext = '#';
+        $next_disabled = 'disabled';
+
+        $htmPaginas = '';
 
         /** Rango: pag. inicial, pag. final **/
         if ($this->showAlways == false && $this->rango[1] <= 1) {
             return false;
         }
 
-        if ($this->rango[1] > 1) {
 
-            /** números de páginas **/
-            $htmPaginas = '';
-            if ($this->numPagesRango > 0) {
-                for ($c = $this->rango[0]; $c <= $this->rango[1]; $c++) {
-                    if ($this->id_page == $c) {
-                        $htmPaginas .= '&nbsp; <span>[' . $c . '] </span>';
-                    } else {
-                        $urlPagina = $this->getUrlParams($c);
-                        $htmPaginas .= '&nbsp; <a href="' . $urlPagina . '">' . $c . '</a> ';
-                    }
-
-                    if ($c == $this->maxPages) {
-                        break;
-                    }
-
+        /** números de páginas **/
+        if ($this->numPagesRango > 0) {
+            for ($c = $this->rango[0]; $c <= $this->rango[1]; $c++) {
+                if ($this->id_page == $c) {
+                    $urlPagina = $this->getUrlParams($c);
+                    $htmPaginas .= '<li class="active"><a href="#">' . $c . '</a></li>';
+                } else {
+                    $urlPagina = $this->getUrlParams($c);
+                    $htmPaginas .= '<li><a href="' . $urlPagina . '">' . $c . '</a></li>';
                 }
-            }
 
-            /** Anterior / Siguiente **/
-            // Prev
-            if ($this->id_page > 1) {
-                $urlPrev = $this->getUrlParams($this->id_page - 1);
-                $htmPrev = '<div class="WPaging_PrevNext">'.
-                                '<a href="' . $urlPrev . '">&laquo; ' . $this->labels['prev'] . '</a>'.
-                            '</div>';
+                if ($c == $this->maxPages) {
+                    break;
+                }
+
             }
+        }
+
+        /** Anterior / Siguiente **/
+        // Prev
+        if ($this->id_page > 1) {
+            $urlPrev = $this->getUrlParams($this->id_page - 1);
+            $prev_disabled = '';
         }
 
         if ($this->numPagesRango == 0) {
             return '';
         }
 
-        // Next
-        $htmNext = '<div class="WPaging_PrevNext">' . $this->labels['sig'] . ' &raquo;</div>';
+        // Next ---
         if ($urlNext = $this->getLinkNext()) {
-            $htmNext = '<div class="WPaging_PrevNext">'.
-                            '<a href="' . $urlNext . '">' . $this->labels['sig'] . ' &raquo;</a>'.
-                       '</div>';
+            $next_disabled = '';
         }
 
         /** Out **/
-        return "
-       <table class='obj_Paging'><tr>".
-          "<td>$htmPrev</td><td>&nbsp;</td>".
-          "<td>$htmPaginas</td><td>&nbsp;</td>".
-          "<td>$htmNext</td>
-       </tr></table>";
-    }
+        return <<<EOD
+        <li class="$prev_disabled"><a href="$urlPrev"><i class="fas fa-angle-left"></i></a></li>
+            $htmPaginas
+        <li class="$next_disabled"><a href="$urlNext"><i class="fas fa-angle-right"></i></a></li>
+        EOD;
+}
     //----------------------------------------------------------------------
     // PRIVATE
     //----------------------------------------------------------------------
