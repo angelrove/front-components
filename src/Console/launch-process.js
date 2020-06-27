@@ -5,8 +5,10 @@
  *
  */
 //--------------------------------------------------------
-function console_launchProcess(console_id, btn_process, ajax_url)
+function console_launchProcess(btn_process, ajax_url)
 {
+    var console_id = '#console_out';
+
     $(console_id).text('');
 
     try {

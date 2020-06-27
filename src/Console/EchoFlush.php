@@ -11,10 +11,14 @@ class EchoFlush
 {
     static private $flushBuffer;
     static private $activeBuffer;
+    static private $key_session;
 
     //------------------------------------------------------------
-    static public function _init($activeBuffer=true)
+    static public function _init($console_id='console-sess', $activeBuffer=true)
     {
+        // key_session
+        self::$key_session = $console_id;
+
         // Para cuando no es por ajax (false)
         self::$activeBuffer = $activeBuffer;
 
@@ -24,6 +28,31 @@ class EchoFlush
             ob_implicit_flush(true);
             self::$flushBuffer = str_repeat(' ', 1024*64);
         }
+    }
+    //------------------------------------------------------------
+    static public function getConsole($console_id='console-sess', $height=305, $getFlush=true)
+    {
+        // key_session
+        self::$key_session = $console_id;
+
+        CssJsLoad::set(__DIR__ . '/launch-process.js');
+?>
+<style>
+#console_out {
+   height: <?=$height?>px;
+   background: black; color:#eee; font-family: monospace; padding: 6px; width: 100%; border-width:0; text-align: left; overflow: scroll;
+}
+</style>
+<div id="console_out">
+<?php
+
+if ($getFlush) {
+    echo self::getFlush();
+}
+
+?>
+</div>
+<?php
     }
     //------------------------------------------------------------
     static public function echo($string, $color='')
@@ -43,8 +72,8 @@ class EchoFlush
         }
 
         // Session -------
-        if (isset($_SESSION['EchoFlush'])) {
-            $_SESSION['EchoFlush'] .= $string;
+        if (isset($_SESSION[self::$key_session])) {
+            $_SESSION[self::$key_session] .= $string;
         }
 
         // Flush ---------
@@ -59,7 +88,7 @@ class EchoFlush
     //------------------------------------------------------------
     static public function getFlush()
     {
-        return ($_SESSION['EchoFlush'])?? '';
+        return ($_SESSION[self::$key_session])?? '';
     }
     //------------------------------------------------------------
     static public function endFlush()
@@ -67,40 +96,12 @@ class EchoFlush
         $text = ob_get_clean();
         echo $text;
 
-        $_SESSION['EchoFlush'] .= $text;
+        $_SESSION[self::$key_session] .= $text;
     }
     //------------------------------------------------------------
     static public function cleanFlush()
     {
-        $_SESSION['EchoFlush'] = '';
-    }
-    //------------------------------------------------------------
-    static public function getConsole($height=305, $getFlush=true)
-    {
-        CssJsLoad::set(__DIR__ . '/launch-process.js');
-?>
-<style>
-#console_out {
-   height: <?=$height?>px;
-   background: black;
-   color:#eee;
-   font-family: monospace;
-   padding: 6px;
-   width: 100%; border-width:0;
-   text-align: left;
-   overflow: scroll;
-}
-</style>
-<div id="console_out">
-<?php
-
-if ($getFlush) {
-    echo self::getFlush();
-}
-
-?>
-</div>
-<?php
+        $_SESSION[self::$key_session] = '';
     }
     //------------------------------------------------------------
 }

@@ -6,16 +6,14 @@ $controlName = 'simple';
 
 // Js ----------------------
 CssJsLoad::set_script("
-    var console_id  = '#console_out';
     var btn_process = '#bt_start_process';
-
     var ajax_url = '/index_ajax.php?service=process';
 
     $(document).ready(function () {
 
         $('#form_console').on('submit', function (e) {
             e.preventDefault();
-            console_launchProcess(console_id, btn_process, ajax_url);
+            console_launchProcess(btn_process, ajax_url);
         });
     });
 ");
@@ -33,6 +31,6 @@ CssJsLoad::set_script("
 </form>
 
 <!-- Console -->
-<?php EchoFlush::getConsole(); ?>
+<?php EchoFlush::getConsole('my_console'); ?>
 
 <?php WPage::get_end();
