@@ -4,6 +4,8 @@ use angelrove\front_components\Console\EchoFlush;
 
 $controlName = 'simple';
 
+$console_id = 'my_console';
+
 // Js ----------------------
 CssJsLoad::set_script("
     var btn_process = '#bt_start_process';
@@ -31,6 +33,6 @@ CssJsLoad::set_script("
 </form>
 
 <!-- Console -->
-<?php EchoFlush::getConsole('my_console'); ?>
+<?php EchoFlush::getConsole($console_id); ?>
 
 <?php WPage::get_end();

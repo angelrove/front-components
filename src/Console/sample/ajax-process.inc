@@ -2,7 +2,9 @@
 use angelrove\front_components\Console\EchoFlush;
 
 //------------------------------
-EchoFlush::_init('my_console');
+$console_id = 'my_console';
+
+EchoFlush::_init($console_id);
 
 EchoFlush::echo('Starting process...<br>');
 EchoFlush::echo('Step 2<br>');
