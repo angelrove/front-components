@@ -1,6 +1,6 @@
 <?php
 use angelrove\membrillo\WPage\WPage;
-use angelrove\front_components\Console\EchoFlush;
+use angelrove\front_components\Console\Console;
 
 $controlName = 'simple';
 
@@ -33,6 +33,6 @@ CssJsLoad::set_script("
 </form>
 
 <!-- Console -->
-<?php EchoFlush::getConsole($console_id); ?>
+<?php Console::getConsole($console_id); ?>
 
 <?php WPage::get_end();
