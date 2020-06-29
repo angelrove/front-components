@@ -1,17 +1,17 @@
 <?php
-use angelrove\front_components\Console\EchoFlush;
+use angelrove\front_components\Console\Console;
 
 //------------------------------
 $console_id = 'my_console';
 
-EchoFlush::_init($console_id);
+Console::_init($console_id);
 
-EchoFlush::echo('Starting process...<br>');
-EchoFlush::echo('Step 2<br>');
+Console::echo('Starting process...<br>');
+Console::echo('Step 2<br>');
 sleep(1);
-EchoFlush::echo('Step 3<br>');
+Console::echo('Step 3<br>');
 sleep(1);
-EchoFlush::echo('Step 4<br>');
+Console::echo('Step 4<br>');
 sleep(1);
 sleep(1);
-EchoFlush::echo('End process');
+Console::echo('End process');
