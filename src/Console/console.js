@@ -1,14 +1,27 @@
 /**
- * Console output
+ * Console
  *
  * reference: http://stratosprovatopoulos.com/web-development/php/ajax-progress-php-script-without-polling/
  *
  */
+
+var console_id = '#console_out';
+
+$(document).ready(function() {
+    $("#Console #onResize").click(function(event) {
+        event.preventDefault();
+        $(console_id).css("height", "550px");
+    });
+
+    $("#Console #onResizeSmall").click(function(event) {
+        event.preventDefault();
+        $(console_id).css("height", "250px");
+    });
+});
+
 //--------------------------------------------------------
 function console_launchProcess(btn_process, ajax_url)
 {
-    var console_id = '#console_out';
-
     $(console_id).text('');
 
     try {

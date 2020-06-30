@@ -35,24 +35,8 @@ class Console
         // key_session
         self::$key_session = $console_id;
 
-        CssJsLoad::set(__DIR__ . '/launch-process.js');
-?>
-<style>
-#console_out {
-   height: <?=$height?>px;
-   background: black; color:#eee; font-family: monospace; padding: 6px; width: 100%; border-width:0; text-align: left; overflow: scroll;
-}
-</style>
-<div id="console_out">
-<?php
-
-if ($getFlush) {
-    echo self::getFlush();
-}
-
-?>
-</div>
-<?php
+        CssJsLoad::set(__DIR__ . '/console.js');
+        include_once 'tmpl_console.php';
     }
     //------------------------------------------------------------
     static public function echo($string, $color='')
